@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶竜詩戦争</name>
-	<rev>Draft-3.1</rev>
+	<rev>Draft-4</rev>
 	<description>
 		202204300429:人型ニーズまで。Draft-3
 		202205010212:各種調整。通知のミスを修正Draft-3.1
+		202205011843:両目フェーズまで。Draft-4
 		SPECIAL THANKS!!
 		Leila.E
 		K.Aura
+		SlayDoll(https://www.twitch.tv/ta_kun0813)
+		zett (https://twitter.com/zettnotfound)
 		AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
 	</description>
 	<author>Aqua Cat,RINGS</author>
@@ -151,6 +154,7 @@
 		<a time="032" text="調査中" />
 		<a time="050" text="移行待ち" />
 		<t sync="騎神トールダン:神に抗う光の使徒よ" goto="ナイツP1" />
+		<t sync="^1A:[id8]:[me] gains the effect of 蒼天の刻印" notice="移動" notice-o="5" />
 	</s>
 
 	<s name="ナイツP1">
@@ -279,23 +283,49 @@
 		<a time="005" sync="ニーズヘッグ:これぞ終焉の竜詩よ！" />
 		<a time="006" text="終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="終焉の竜詩。" />
 		<a time="011" sync="ニーズヘッグ:我が竜詩を耐えるというのか……！ フレースヴェルグの力を使いこなしていると！？" />
-		<a time="011" text="攻撃" sync="ニーズヘッグの「攻撃」" />
+		<a time="011" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
 		<a time="014" text="攻撃" />
 		<a time="018" text="攻撃" />
 		<a time="019" sync="ニーズヘッグ:殺す、殺す、殺す！" />
 		<a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="マーカーつくよ" />
 		<a time="025" text="堕天のドラゴンダイブ" sync="ニーズヘッグの「堕天のドラゴンダイブ」" />
-		<a time="026" text="内外注意" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
-		<a time="034" text="連旋" notice="" />
-
+		<a time="026" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
+		<!--a time="033.0" text="牙尾の連旋" sync="ニーズヘッグの「牙尾の連旋」" /-->
+		<!--塔1回目-->
+		<a time="034" text="塔1回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔1回目" />
 		<a time="035" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
-		<a time="038" text="大車輪2" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
-		<a time="039" text="ドラゴンダイブ" notice="ドラゴンダイブ" />
-		<a time="041" text="大車輪1" notice="" />
-		<a time="043" text="" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="" />
-		<a time="048" text="連旋" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
-		<a time="048" text="ゲイルスコグル" sync="ニーズヘッグの「ゲイルスコグル」" />
-		<a time="049" text="ゲイルスコグル"  />
+		<a time="038" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
+		<a time="040" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み1回目" />
+		<a time="041" text="大車輪2" notice="大車輪" />
+		<a time="043" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+		<!--塔2回目-->
+		<a time="044" text="塔2回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔2回目" />
+		<a time="048" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
+		<a time="050" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み2回目" />
+		<a time="053" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+		<!--塔3回目-->
+		<a time="055" text="塔3回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔3回目" />
+		<a time="056" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
+		<a time="059" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
+		<a time="061" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み3回目" />
+		<a time="062" text="大車輪2" notice="大車輪" />
+		<a time="064" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+		<a time="066" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
+		<a time="069" text="攻撃" />
+		<a time="074" text="ドラッケンランス" sync="ニーズヘッグの「ドラッケンランス」" notice="ドラッケンランス" />
+		<!--塔4回目-->
+		<a time="075" text="塔を確認" sync="ニーズヘッグは「ダークドラゴンダイブ」の構え。" notice="塔を確認" />
+		<a time="081" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔が発動" />
+		<a time="083" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+		<a time="088" text="ソウルテザー" sync="ニーズヘッグの「ソウルテザー」" notice="次は、ソウルテザー。" />
+		<a time="093" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
+		<a time="096" text="攻撃" />
+		<a time="099" text="攻撃" />
+		<a time="102" text="攻撃" />
+		<a time="105" text="攻撃" />
+		<a time="112" text="ドラッケンランス" sync="ニーズヘッグの「ドラッケンランス」" />
+		<a time="113" text="時間切れ開始" sync="ニーズヘッグは「最期の咆哮」の構え。" notice="" />
+		<t sync="アルフィノ:エスティニアン殿！" goto="ニーズP2" />
 
 		<t sync="^14:6712" notice="牙から尾" >
 			<v-notice
@@ -356,5 +386,32 @@
 			  text="塔踏み:1回目,塔3:後ろ"
 			  duration="30" />
 		</t>
+	</s>
+
+	<s name="ニーズP2">
+		<a time="003" text="セリフ4" sync="エスティニアン:あ、相棒よ… 最期の頼みだ…！" />
+		<a time="007" text="セリフ3" sync="エスティニアン:俺が邪竜の意思を 押さえ込んでいる隙に…" />
+		<a time="010" text="盟友の想い" sync="オルシュファンの「盟友の想い」" notice="次は、盟友の想い。" />
+		<a time="011" text="セリフ2" sync="エスティニアン:トドメを… トドメを刺してくれッ！" />
+		<a time="017" text="セリフ1" sync="エスティニアン:グオオオォォォォッ！" />
+		<a time="018" text="全体攻撃" sync="エスティニアンの「苦悶の咆哮」" notice="全体攻撃" />
+		<a time="022" text="線が付与" sync="邪竜の左眼は「邪竜爪牙」の構え。" notice="線が付くよ" />
+		<a time="026" text="邪竜爪牙" sync="邪竜の左眼の「邪竜爪牙」" />
+		<!--
+  <a time="033" text="フレアディザスター" sync="黄金の珠の「フレアディザスター」" notice="次は、フレアディザスター。" />
+  <a time="035" text="フレアディザスター" sync="黄金の珠の「フレアディザスター」" notice="次は、フレアディザスター。" />
+  <a time="037" text="フレアスター" sync="蒼天の珠の「フレアスター」" notice="次は、フレアスター。" />
+  <a time="038" text="フレアスター" sync="蒼天の珠の「フレアスター」" notice="次は、フレアスター。" />
+  <a time="039" text="フレアスター" sync="蒼天の珠の「フレアスター」" notice="次は、フレアスター。" />
+  -->
+		<a time="048" text="ダイブ準備" sync="邪竜の左眼は「ミラージュダイブ」の構え。" notice="ダイブの準備" />
+		<a time="053" text="ダイブ4" sync="ニーズヘッグの「ミラージュダイブ」" sync-count="1" notice="ダイブ1回目" />
+		<a time="058" text="ダイブ3" notice="ダイブ2回目" />
+		<a time="063" text="ダイブ2" notice="ダイブ3回目" />
+		<a time="063" text="ダイブ1" notice="ダイブ4回目" />
+		<a time="078" text="憤怒の波動" sync="邪竜の左眼の「憤怒の波動」" notice="憤怒の波動" />
+		<a time="085" text="影の侵食" sync="邪竜の左眼の「影の侵食」" notice="影の侵食。" />
+		<a time="100" text="調査中" />
+
 	</s>
 </timeline>
