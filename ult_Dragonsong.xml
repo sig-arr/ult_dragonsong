@@ -29,12 +29,11 @@
 		</t>
 	</s>
 
-	<!--　キャラ名とジョブの対応作成 @job_order[0]～ @job_order[7] T1T2H1H2D1D2D3D4の順-->
 	@{
 	var job_order      = new string[] { "[GNB]", "[PLD]", "[WHM]", "[SCH]", "[DRG]","[NIN]",  "[DNC]", "[RDM]" };
+	var job_order_icon      = new string[] { "GNB.png", "PLD.png", "WHM.png", "SCH.png", "DRG.png","NIN.png",  "DNC.png", "RDM.png" };
 	var job_order_call = new string[] { "がん",  "なー",  "しろ",  "がく",  "りゅう", "にん", "おどり",  "あか" };
 	}
-
 
 	<s name="教皇庁P1">
 		<a time="005" text="" sync="聖騎士アデルフェルは「ホリエストホーリー」の構え。" />
@@ -381,6 +380,10 @@
 
 
 	<s name="ナイツP2">
+
+
+
+
 		<a time="005" text="セリフ" sync="騎神トールダン:我は人にして、神なり！" />
 		<a time="005" text="蒼天の陣：聖杖" sync="騎神トールダンの「蒼天の陣：聖杖」">
 			<v-notice
@@ -425,7 +428,7 @@
 			</expressions>
 			<v-notice
 		      text="2番 ➜ ${_pc}"
-			  icon="@job_order[1].png"
+			  icon="job_order_icon[1]"
 		      duration="8" />
 		</t>
 		<t no="27" sync="^1B:[id8]:@job_order[3]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[3]">
@@ -434,7 +437,7 @@
 			</expressions>
 			<v-notice
 		      text="2番 ➜ ${_pc}"
-			  icon="@job_order[3].png"
+			  icon="job_order_icon[3]"
 		      duration="8" />
 		</t>
 		<t no="28" sync="^1B:[id8]:@job_order[5]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[5]">
@@ -443,7 +446,7 @@
 			</expressions>
 			<v-notice
 		      text="2番 ➜ ${_pc}"
-			  icon="@job_order[5].png"
+			  icon="job_order_icon[5]"
 		      duration="8" />
 		</t>
 		<t no="29" sync="^1B:[id8]:@job_order[7]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[7]">
@@ -452,7 +455,7 @@
 			</expressions>
 			<v-notice
 		      text="2番 ➜ ${_pc}"
-			 icon="@job_order[7].png"
+			  icon="job_order_icon[7]"
 		      duration="8" />
 		</t>
 
@@ -460,25 +463,25 @@
 		<t no="30" sync="^1B:[id8]:@job_order[0]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" text="1番User @job_order[0]">
 			<v-notice
 		      text="1番 ➜ ${_pc}"
-			  icon="@job_order[0].png"
+			  icon="job_order_icon[0]"
 		      duration="8" />
 		</t>
 		<t no="31" sync="^1B:[id8]:@job_order[2]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" text="1番User @job_order[2]">
 			<v-notice
 		      text="1番 ➜ ${_pc}"
-			  icon="@job_order[2].png"
+			  icon="job_order_icon[2]"
 		      duration="8" />
 		</t>
 		<t no="32" sync="^1B:[id8]:@job_order[4]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" text="1番User @job_order[4]">
 			<v-notice
 		      text="1番 ➜ ${_pc}"
-			  icon="@job_order[4].png"
+			  icon="job_order_icon[4]"
 		      duration="8" />
 		</t>
 		<t no="33" sync="^1B:[id8]:@job_order[6]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" text="1番User @job_order[6]">
 			<v-notice
 		      text="1番 ➜ ${_pc}"
-			 icon="@job_order[6].png"
+			  icon="job_order_icon[6]"
 		      duration="8" />
 		</t>
 -->
