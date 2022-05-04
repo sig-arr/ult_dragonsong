@@ -609,7 +609,7 @@
 		</t>
 
 
-		<t no="40" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="隕石対象" notice="でるたー" >
+		<t no="40" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="いんせき、あるふぁー">
 			<expressions>
 				<set name="comet_self" value="True" />
 			</expressions>
@@ -633,15 +633,16 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<t no="41" sync="^1B:[id8]:@job_order[2]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="">
 			<expressions>
 				<set name="comet_TH" value="True" />
-				<set name="comet_H1" value="True" />
+				<set name="comet_H1" value="True" /> <!--誰を見るかフラグ-->
 			</expressions>
 		</t>
 
 <!--それ以外は　B-->
 		<t no="42" sync="^1B:[id8]:(@job_order[1]|@job_order[3]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice=""  sync-count="1">
 			<expressions>
-				<set name="comet_TH" value="True" />
-				<set name="comet_H1" value="false" />
+				<pre name="comet_TH" value="True" />
+				<pre name="comet_H1" value="false" />
+				<pre name="comet_self" value="false" />
 			</expressions>
 		</t>
 
@@ -651,6 +652,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			<expressions>
 				<pre name="comet_TH" value="True" />
 				<set name="comet_H1" value="True" />
+				<pre name="comet_self" value="false" />
 			</expressions>
 			<v-notice
 			  text="①外周へ行く\n②東西南北待機"
