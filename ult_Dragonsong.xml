@@ -30,30 +30,33 @@
 	</s>
 
 	@{
-	var job_order      = new string[] { "[GNB]", "[PLD]", "[WHM]", "[SCH]", "[DRG]","[NIN]",  "[DNC]", "[RDM]" };
-	var job_order_icon      = new string[] { "GNB.png", "PLD.png", "WHM.png", "SCH.png", "DRG.png","NIN.png",  "DNC.png", "RDM.png" };
+	var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]","[NIN]",  "[DNC]", "[RDM]" };
+	var job_order_icon      = new string[] { "DRK.png", "PLD.png", "WHM.png", "SCH.png", "DRG.png","NIN.png",  "DNC.png", "RDM.png" };
 	var job_order_call = new string[] { "がん",  "なー",  "しろ",  "がく",  "りゅう", "にん", "おどり",  "あか" };
 	}
 
 	<s name="教皇庁P1">
 		<a time="005" text="" sync="聖騎士アデルフェルは「ホリエストホーリー」の構え。" />
-		<a time="010" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃" />
+		<a time="010" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃" notice-o="-6"/>
 		<a time="017" text="" sync="聖騎士グリノーは「エンプティディメンション」の構え。" notice="" />
 		<a time="023" text="線" sync="聖騎士アデルフェルの「ホーリーシールドバッシュ」" notice="線が付くよ" />
 		<a time="023" text="エンプティD" sync="聖騎士グリノーの「エンプティディメンション」" notice="" />
 		<a time="025" text="ブレードダンス" sync="聖騎士アデルフェルの「ホーリーブレードダンス」" notice="" />
 		<a time="028" text="頭割り" sync="聖騎士シャリベルの「ヘヴンブレイズ」" notice="頭割り" />
 		<a time="038" text="散開待機" sync="聖騎士グリノーは「ハイパーディメンション」の構え。" notice="散開待機" />
-		<a time="044" text="ハイパーディメンション2" sync="聖騎士グリノーの「ハイパーディメンション」" notice="。" sync-count="1" />
+		<a time="044" text="ハイパーディメンション2" sync="聖騎士グリノーの「ハイパーディメンション」" notice="" sync-count="1" />
 		<a time="051" text="ハイパーディメンション1" notice="次は、ハイパーディメンション。" />
+		<a time="058" text="MarkingPos取得" >
+ 			 <dump target="Position" />
+		</a>
 		<a time="060" text="ノックバック" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="ノックバック" />
-		<a time="061" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃" />
+		<a time="061" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃"  notice-o="-6"/>
 		<a time="063" text="シャイニングブレード4" sync="聖騎士アデルフェルの「シャイニングブレード」" sync-count="1" />
 		<a time="064" text="シャイニングブレード3" />
 		<a time="065" text="シャイニングブレード2" />
 		<a time="066" text="シャイニングブレード1" />
 		<a time="069" text="(MT)エクスキューション" sync="聖騎士アデルフェルの「エクスキューション」" notice="。" />
-		<a time="071" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！">
+		<a time="071" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！"  notice-o="-6">
 			<i-notice
       duration="15"
       scale="1"
@@ -65,11 +68,11 @@
 		<a time="086" text="フェイスアンムーブ" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="" />
 		<!--8人へAoE攻撃。通知不要か-->
 		<a time="088" text="ヘヴンフレイム" sync="聖騎士シャリベルの「ヘヴンフレイム」" notice="" />
-		<a time="089" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！" />
+		<a time="089" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！"  notice-o="-6"/>
 		<a time="098" text="内外確認" sync="聖騎士グリノーは「フルディメンション」の構え。" notice="" />
-		<a time="102" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃" />
+		<a time="102" text="全体攻撃" sync="聖騎士アデルフェルの「ホリエストホーリー」" notice="全体攻撃"  notice-o="-6"/>
 		<a time="104" text="E/Fディメンション" sync="聖騎士グリノーの「フルディメンション」" />
-		<a time="109" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！" />
+		<a time="109" text="！沈黙！" sync="聖騎士アデルフェルは「ホリエストブレッシング」を唱えた。" notice="ちんもく！"  notice-o="-6"/>
 		<a time="121" text="時間切れ開始" sync="聖騎士アデルフェルは「美剣の覚悟」の構え。" notice="" />
 		<a time="125" text="時間切れ" notice="" />
 		<a time="126" text="強制移行" goto="教皇庁P2" />
@@ -129,6 +132,80 @@
       duration="5" />
 		</t>
 
+<!--ポジションによる出現位置テスト 
+      <t name="聖騎士アデルフェル＠北出現">
+        <p-sync interval="120">
+          <combatant name="聖騎士アデルフェル" X="100.00" Y="78.00" />
+        </p-sync>
+        <expressions>
+          <set name="jump_adel" value="N" />
+        </expressions>
+      </t>
+      <t name="聖騎士アデルフェル＠東出現">
+        <p-sync interval="120">
+          <combatant name="聖騎士アデルフェル" X="78.00" Y="100.00" />
+        </p-sync>
+        <expressions>
+          <set name="jump_adel" value="E" />
+        </expressions>
+      </t>
+      <t name="聖騎士アデルフェル＠西出現">
+        <p-sync interval="120">
+          <combatant name="聖騎士アデルフェル" X="122.00" Y="100.00" />
+        </p-sync>
+        <expressions>
+          <set name="jump_adel" value="W" />
+        </expressions>
+      </t>
+      <t name="聖騎士アデルフェル＠南出現">
+        <p-sync interval="120">
+          <combatant name="聖騎士アデルフェル" X="100.00" Y="122.00" />
+        </p-sync>
+        <expressions>
+          <set name="jump_adel" value="S" />
+        </expressions>
+      </t>
+
+		<t sync="聖騎士グリノーは「フェイスアンムーブ」の構え" sync-count="1">
+        <expressions>
+          <pre name="jump_adel" value="N" />
+        </expressions>
+					<v-notice
+		      text="TEST：南安置:Cへ"
+		      icon="C.png"
+		      duration="8" />
+		</t>
+		<t sync="聖騎士グリノーは「フェイスアンムーブ」の構え" sync-count="1">
+        <expressions>
+          <pre name="jump_adel" value="E" />
+        </expressions>
+			<v-notice
+      text="TEST：西安置:Bへ"
+      icon="B.png"
+      duration="8" />
+		</t>
+		<t sync="聖騎士グリノーは「フェイスアンムーブ」の構え" sync-count="1">
+        <expressions>
+          <pre name="jump_adel" value="W" />
+        </expressions>
+			<v-notice
+      text="TEST：東安置:Dへ"
+      icon="D.png"
+      duration="8" />
+		</t>
+		<t sync="聖騎士グリノーは「フェイスアンムーブ」の構え" sync-count="1">
+        <expressions>
+          <pre name="jump_adel" value="S" />
+        </expressions>
+			<v-notice
+      text="TEST：北安置:Aへ"
+      icon="A.png"
+      duration="8" />
+		</t>
+ポジションによる出現位置テスト ここまで -->
+
+
+
 		　		<!--マーカーセット。ビームを基準にし、他マーカーを逆算するよう試作。-->
 		<t no="1" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;marker&gt;[0-9a-fA-F]{4}):" sync-count="1" >
 			<expressions>
@@ -157,16 +234,16 @@
 		</t>
 
 		<!--鎖が誰とついたかの表示　-->
-		<t text="鎖 ➜${_pc}" sync="^23:[id8]:@Model.Player.Name:[id8]:[pc]:[id4]:0000:0009:[id8]:000F:[id4]:$" notice="" >
+		<t text="鎖 ➜${_pc}" sync="^23:[id8]:@Model.Player.Name:[id8]:[pc]:[id4]:0000:0009:[id8]:000F:[id4]" notice="" >
 			<v-notice
 			  order="-1"
-			  duration="10"
+			  duration="8"
 			  job-icon="true" />
 		</t>
-		<t text="鎖 ➜ ${_pc}" sync="^23:[id8]:[pc]:[id8]:@Model.Player.Name:[id4]:0000:0009:[id8]:000F:[id4]:$" notice="" >
+		<t text="鎖 ➜ ${_pc}" sync="^23:[id8]:[pc]:[id8]:@Model.Player.Name:[id4]:0000:0009:[id8]:000F:[id4]" notice="" >
 			<v-notice
 			  order="-1"
-			  duration="10"
+			  duration="8"
 			  job-icon="true" />
 		</t>
 	</s>
@@ -194,6 +271,7 @@
 				<set name="Yari_3" value="false" />
 				<set name="Yari_4" value="false" />
 				<set name="Call_tue_1" value="false" />
+				<set name="comet_TH" value="false" />
 				<!--元々ゼフィラン側ならFalseとする。-->
 			</expressions>
 		</a>
@@ -210,6 +288,9 @@
 		<a time="025" text="蒼天の陣：雷槍" sync="騎神トールダンの「蒼天の陣：雷槍」" />
 		<a time="025" sync="騎神トールダン:王の栄光をここに！" />
 		<a time="031" text="◇外周POP◇" sync="聖騎士イニアセルは「スパイラルスラスト」の構え。" notice="外周確認" />
+		<a time="032" text="MarkingPos取得◇外周POP◇" >
+ 			 <dump target="Position" />
+		</a>
 		<a time="037" text="百雷" sync="騎神トールダンの「百雷」" notice="百雷" />
 		<a time="038" text="スパイラルスラスト" sync="聖騎士イニアセルの「スパイラルスラスト」" />
 		<a time="039" text="◇範囲誘導◇" sync="騎神トールダンは「インビジブル・アスカロンメルシー」の構え。">
@@ -220,6 +301,9 @@
 		</a>
 		<a time="043" text="（軽★）I,Aメルシー" sync="騎神トールダンの「インビジブル・アスカロンメルシー」" notice="ミッショ、アスカロンメルシー" />
 		<a time="044" text="マーカー注意" sync="聖騎士グリノーは「ディメンションクラッシュ」の構え。" notice="マーカーつくよ" />
+		<a time="045" text="MarkingPos取得◇マーカーPOP◇" >
+ 			 <dump target="Position" />
+		</a>
 		<a time="046" text="" sync="聖騎士エルムノストは「コンヴィクション」の構え。" notice="" />
 		<a time="047" text="線取り注意" sync="騎神トールダンは「邪竜の魔炎」を唱えた。" notice="線取り注意" />
 		<a time="053" text="ディメンション" sync="聖騎士グリノーの「ディメンションクラッシュ」" />
@@ -227,7 +311,7 @@
 		<a time="054" text="バッシュ" sync="聖騎士アデルフェルの「ホーリーシールドバッシュ」" notice="" />
 		<a time="056" text="ブレードダンス" sync="聖騎士アデルフェルの「ホーリーブレードダンス」" notice="" />
 		<a time="057" text="コンヴィクション" sync="聖騎士エルムノストの「コンヴィクション」" notice="" />
-		<a time="066" text="（軽◎）エンシェントクエイガ" sync="騎神トールダンの「エンシェントクエイガ」" notice="りぷ、全体攻撃" />
+		<a time="066" text="（軽◎）エンシェントクエイガ" sync="騎神トールダンの「エンシェントクエイガ」" notice="りぷ、全体攻撃" notice-o="-6" />
 		<a time="071" text="タンク交代" sync="騎神トールダンは「ヘヴンリーヒール」の構え。" notice="タンクスイッチ" />
 		<a time="075" text="ヘヴンリーヒール" sync="騎神トールダンの「ヘヴンリーヒール」" notice="強攻撃" />
 		<a time="078" text="Aマイト3" sync="騎神トールダンの「アスカロンマイト」" notice="マイト3連" />
@@ -246,7 +330,7 @@
 		</t>
 
 
-		<!--。-->
+		<!-- -->
 
 		<t no="6" sync="^14:63D4:.*83.74,83.74,0.00" text="1マーカーPop" name="突進Pop1">
 			<expressions>
@@ -257,7 +341,6 @@
 			<expressions>
 				<set name="Yari_1" value="true" />
 			</expressions>
-
 		</t>
 		<t no="8" sync="^14:63D4:.*116.26,83.74,0.00" text="2マーカーPop" name="突進Pop2">
 			<expressions>
@@ -380,15 +463,17 @@
 
 
 	<s name="ナイツP2">
-
-
-
-
-		<a time="005" text="セリフ" sync="騎神トールダン:我は人にして、神なり！" />
-		<a time="005" text="蒼天の陣：聖杖" sync="騎神トールダンの「蒼天の陣：聖杖」">
-			<v-notice
-      text="ゼフィラン側（2側）"
-      duration="8" />
+		<a time="005" text="セリフ" sync="騎神トールダン:我は人にして、神なり！" >
+			<expressions>
+				<set name="Call_tue_1" value="false" />
+				<set name="comet_TH" value="false" />
+				<set name="comet_self" value="false" />
+				<set name="comet_H1" value="false" />
+			</expressions>
+		</a>
+		<a time="005" text="蒼天の陣：聖杖" sync="騎神トールダンの「蒼天の陣：聖杖」" />
+		<a time="012" text="MarkingPos取得◇聖杖◇" >
+ 			 <dump target="Position" />
 		</a>
 		<a time="018" text="竜の邪眼" sync="騎神トールダンの「竜の邪眼」" />
 		<a time="018" text="シャイニングブレード" sync="聖騎士ジャンルヌの「シャイニングブレード」" notice="" />
@@ -407,7 +492,7 @@
 		<a time="043.8" text="コメット6" />
 		<a time="045.2" text="コメット5" />
 		<a time="046.6" text="コメット4" />
-		<a time="048" text="コメット3" />
+		<a time="048" text="コメット3"  notice="アムレン" />
 		<a time="049.4" text="コメット2" />
 		<!--時系列おかしいけどとりあえず放置-->
 		<a time="051.8" text="コメット1" />
@@ -426,39 +511,25 @@
 			<expressions>
 				<set name="Call_tue_1" value="True" />
 			</expressions>
-			<v-notice
-		      text="2番 ➜ ${_pc}"
-			  icon="job_order_icon[1]"
-		      duration="8" />
 		</t>
+
+<!-- いけにえ君にしないならここはいらない
 		<t no="27" sync="^1B:[id8]:@job_order[3]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[3]">
 			<expressions>
 				<set name="Call_tue_1" value="false" />
 			</expressions>
-			<v-notice
-		      text="2番 ➜ ${_pc}"
-			  icon="job_order_icon[3]"
-		      duration="8" />
 		</t>
 		<t no="28" sync="^1B:[id8]:@job_order[5]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[5]">
 			<expressions>
 				<set name="Call_tue_1" value="false" />
 			</expressions>
-			<v-notice
-		      text="2番 ➜ ${_pc}"
-			  icon="job_order_icon[5]"
-		      duration="8" />
 		</t>
 		<t no="29" sync="^1B:[id8]:@job_order[7]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" text="2番User @job_order[7]">
 			<expressions>
 				<set name="Call_tue_1" value="false" />
 			</expressions>
-			<v-notice
-		      text="2番 ➜ ${_pc}"
-			  icon="job_order_icon[7]"
-		      duration="8" />
 		</t>
-
+-->
 		<!--マーカー　判断TEST　本来2待機（ゼフィラン）の人に1ついた　軽量化のためコメントアウト
 		<t no="30" sync="^1B:[id8]:@job_order[0]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" text="1番User @job_order[0]">
 			<v-notice
@@ -487,7 +558,10 @@
 -->
 
 		<!--自分が1番の場合は当然1番へ-->
-		<t no="34" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="１ばんまーかー" >
+		<t no="34" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="" >
+			<expressions>
+				<set name="Call_tue_1" value="True" />
+			</expressions>
 			<v-notice
 			  text="1番★【反対側】★"
 			  icon="1.png"
@@ -515,22 +589,135 @@
 		      duration="8" />
 		</t>
 
-		<t no="38" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="１ばんへ" sync-count="1" >
+		<t no="38" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="はなれる">
 			<expressions>
 				<pre name="Call_tue_1" value="True" />
 			</expressions>
 			<v-notice
-			  text="1番★【反対側】★"
-			  icon="1.png"
+			  text="★【反対側】★"
+			icon="DontApproach.png"
+			  duration="15" />
+		</t>
+		<t no="39" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="ちかくへ">
+			<expressions>
+				<pre name="Call_tue_1" value="False" />
+			</expressions>
+			<v-notice
+			  text="★【ゼフィラン側】★"
+			icon="Approach.png"
 			  duration="15" />
 		</t>
 
 
-		<t no="39" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="隕石対象" >
+		<t no="40" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="隕石対象" notice="でるたー" >
+			<expressions>
+				<set name="comet_self" value="True" />
+			</expressions>
 			<v-notice
-      text="隕石対象"
-      duration="15" />
+		      text="隕石対象\n ①外周でスプリント"
+			icon="A.png"
+		      duration="20" />
 		</t>
+
+
+<!--
+		<t no="41" sync="^1B:[id8]:([HEALER]|[TANK]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="">
+			<expressions>
+				<set name="comet_TH" value="True" />
+			</expressions>
+		</t>
+var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]","[NIN]",  "[DNC]", "[RDM]" };
+-->
+
+<!--H1/D1をみてついていたら　D-->
+		<t no="41" sync="^1B:[id8]:@job_order[2]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="">
+			<expressions>
+				<set name="comet_TH" value="True" />
+				<set name="comet_H1" value="True" />
+			</expressions>
+		</t>
+
+<!--それ以外は　B-->
+		<t no="42" sync="^1B:[id8]:(@job_order[1]|@job_order[3]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice=""  sync-count="1">
+			<expressions>
+				<set name="comet_TH" value="True" />
+				<set name="comet_H1" value="false" />
+			</expressions>
+		</t>
+
+
+<!--H1/D1をみてついていたら　D-->
+		<t no="43" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" text="TD隕石＠Dへ" sync-count="2"  notice="でるたー" >
+			<expressions>
+				<pre name="comet_TH" value="True" />
+				<set name="comet_H1" value="True" />
+			</expressions>
+			<v-notice
+			  text="①外周へ行く\n②東西南北待機"
+			icon="D.png"
+			  duration="20" />
+		</t>
+
+<!--それ以外は　B-->
+		<t no="44" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" text="TD隕石＠Bへ" sync-count="2" notice="ぶらぼー">
+			<expressions>
+				<pre name="comet_TH" value="True" />
+				<set name="comet_H1" value="false" />
+			</expressions>
+			<v-notice
+			  text="①外周へ行く\n②東西南北待機"
+			icon="B.png"
+			  duration="20" />
+		</t>
+
+		<t no="45" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" text="DPS隕石＠Aへ" notice="あるふぁー" sync-count="2">
+			<expressions>
+				<pre name="comet_TH" value="false" />
+			</expressions>
+			<v-notice
+			  text="①外周1本→　内側 / 2本→外側\n②2本目は「2」"
+			icon="MeleeDPS.png"
+			  duration="25" />
+		</t>
+
+<!--突進　ゼフィランの位置-->
+		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知2">
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.29" />
+	        </p-sync>
+			<v-notice
+			  text="2側ゼフィラン"
+			icon="2.png"
+			  duration="25" />
+		</t>
+		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知3">
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" />
+	        </p-sync>
+			<v-notice
+			  text="3側ゼフィラン"
+			icon="3.png"
+			  duration="25" />
+		</t>
+		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知1">
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.29" Y="23.29" />
+	        </p-sync>
+			<v-notice
+			  text="1側ゼフィラン"
+			icon="1.png"
+			  duration="25" />
+		</t>
+		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知4">
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" />
+	        </p-sync>
+			<v-notice
+			  text="4側ゼフィラン"
+			icon="4.png"
+			  duration="25" />
+		</t>
+<!--突進ゼフィランの位置　ここまで-->
 
 		<t sync="^14:63C0" notice="右に入る" >
 			<v-notice
@@ -660,7 +847,7 @@
 		<a time="010" text="盟友の想い" sync="オルシュファンの「盟友の想い」" notice="次は、盟友の想い。" />
 		<a time="011" text="セリフ2" sync="エスティニアン:トドメを… トドメを刺してくれッ！" />
 		<a time="017" text="セリフ1" sync="エスティニアン:グオオオォォォォッ！" />
-		<a time="018" text="全体攻撃" sync="エスティニアンの「苦悶の咆哮」" notice="全体攻撃" />
+		<a time="018" text="全体攻撃" sync="エスティニアンの「苦悶の咆哮」" notice="全体攻撃"  notice-o="-6" />
 		<a time="022" text="線が付与" sync="邪竜の左眼は「邪竜爪牙」の構え。" notice="線が付くよ" />
 		<a time="026" text="邪竜爪牙" sync="邪竜の左眼の「邪竜爪牙」" />
 		<!--
