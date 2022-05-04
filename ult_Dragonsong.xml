@@ -631,24 +631,21 @@
 var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]","[NIN]",  "[DNC]", "[RDM]" };
 -->
 
+
+		<!--H1/D1がついていなかったら　B-->
+		<t no="41" sync="^1B:[id8]:(@job_order[1]|@job_order[3]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice=""  sync-count="1">
+			<expressions>
+				<set name="comet_TH" value="True" />
+			</expressions>
+		</t>
+
 		<!--H1/D1をみてついていたら　D-->
-		<t no="41" sync="^1B:[id8]:@job_order[2]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="">
+		<t no="42" sync="^1B:[id8]:@job_order[2]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="">
 			<expressions>
 				<set name="comet_TH" value="True" />
 				<set name="comet_H1" value="True" />
-				<set name="comet_self" value="false" />
 			</expressions>
 		</t>
-
-		<!--それ以外は　B-->
-		<t no="42" sync="^1B:[id8]:(@job_order[1]|@job_order[3]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice=""  sync-count="1">
-			<expressions>
-				<set name="comet_TH" value="True" />
-				<set name="comet_H1" value="false" />
-				<set name="comet_self" value="false" />
-			</expressions>
-		</t>
-
 
 		<!--H1/D1をみてついていたら　D-->
 		<t no="43" sync="^1B:[id8]:[pc]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" text="TD隕石＠Dへ" sync-count="2"  notice="でるたー" >
@@ -686,44 +683,44 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			  duration="25" />
 		</t>
 
-		<!--突進　ゼフィランの位置-->
+		<!--突進　ゼフィランの位置
 		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知2">
-			<p-sync interval="120">
-				<combatant name="聖騎士ゼフィラン" X="23.71" Y="23.29" tolerance="0.01" />
-			</p-sync>
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.29" tolerance="0.01" />
+	        </p-sync>
 			<v-notice
 			  text="2側ゼフィラン出現"
 			icon="2.png"
 			  duration="25" />
 		</t>
 		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知3">
-			<p-sync interval="120">
-				<combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" tolerance="0.01" />
-			</p-sync>
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" tolerance="0.01" />
+	        </p-sync>
 			<v-notice
 			  text="3側ゼフィラン出現"
 			icon="3.png"
 			  duration="25" />
 		</t>
 		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知1">
-			<p-sync interval="120">
-				<combatant name="聖騎士ゼフィラン" X="23.29" Y="23.29" tolerance="0.01" />
-			</p-sync>
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.29" Y="23.29" tolerance="0.01" />
+	        </p-sync>
 			<v-notice
 			  text="1側ゼフィラン出現"
 			icon="1.png"
 			  duration="25" />
 		</t>
 		<t sync="騎神トールダンの「蒼天の陣：聖杖」" text="ゼフィランの場所通知4">
-			<p-sync interval="120">
-				<combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" tolerance="0.01" />
-			</p-sync>
+	        <p-sync interval="120">
+	          <combatant name="聖騎士ゼフィラン" X="23.71" Y="23.71" tolerance="0.01" />
+	        </p-sync>
 			<v-notice
 			  text="4側ゼフィラン出現"
 			icon="4.png"
 			  duration="25" />
 		</t>
-		<!--突進ゼフィランの位置　ここまで-->
+突進ゼフィランの位置　ここまで-->
 
 		<t sync="^14:63C0" notice="右に入る" >
 			<v-notice
@@ -928,13 +925,13 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 
 		<t sync="^1A:[id8]:[me] gains the effect of サンダーウィング" notice="サンダー注意" >
 			<v-notice
-			  text="サンダー対象"
-			  duration="15" />
+      text="サンダー対象"
+      duration="15" />
 		</t>
 		<t sync="^1A:[id8]:[me] gains the effect of 死の宣告" notice="死の宣告" >
 			<v-notice
-			  text="死の宣告"
-			  duration="29" />
+      text="死の宣告"
+      duration="29" />
 		</t>
 	</s>
 </timeline>
