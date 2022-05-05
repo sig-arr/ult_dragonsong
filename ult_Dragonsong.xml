@@ -499,7 +499,7 @@
 		<a time="051.8" text="コメット1" />
 		<a time="051" text="フェイスアンムーブ" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="ノックバック" />
 		<a time="054" text="塔発動" sync="聖騎士エルムノストの「コンヴィクション」" notice="塔を踏む" />
-		<a time="071" text="アルティメットエンド" sync="騎神トールダンの「アルティメットエンド」" notice="" />
+		<a time="071" text="（軽◎）アルティメットエンド" sync="騎神トールダンの「アルティメットエンド」" notice="リプ"  notice-o="-6" />
 		<a time="084" text="大振り" sync="騎神トールダンの「大振り」" />
 		<a time="093" text="大振り" sync="騎神トールダンの「大振り」" />
 		<a time="097" text="時間切れ開始" sync="騎神トールダンは「エーテルバースト」の構え。" notice="エーテルバースト。" />
@@ -745,7 +745,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 				<set name="h_jump3" value="False" />
 			</expressions>
 		</a>
-		<a time="006" text="終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="終焉の竜詩。" />
+		<a time="006" text="（軽★）終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="ミッショ、終焉の竜詩。"  notice-o="-6" />
 		<a time="011" sync="ニーズヘッグ:我が竜詩を耐えるというのか……！ フレースヴェルグの力を使いこなしていると！？" />
 		<a time="011" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
 		<a time="014" text="攻撃" />
@@ -761,7 +761,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<!--a time="033" text="牙尾の連旋" sync="ニーズヘッグの「牙尾の連旋」" /-->
 		<!--塔1回目-->
 		<a time="034" text="塔1回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔1回目" />
-		<a time="035" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
+		<a time="035" text="（軽◎）頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="リプ、頭割り"  notice-o="-6" />
 		<a time="038" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
 		<a time="040" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み1回目">
 			<v-notice
@@ -809,24 +809,36 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 
 		<t sync="^14:6712" notice="牙から尾" >
 			<v-notice
-			  text="安置:外側→内側"
-			  duration="12" />
+			  text="安置:外側→（内側）"
+			icon="AOEInside.png"
+			  duration="9" />
+			<v-notice
+			  text="安置:　　→ 内側"
+			icon="AOEOutside.png"
+			delay="10"
+			  duration="13" />
 		</t>
 		<t sync="^14:6713" notice="尾から牙" >
 			<v-notice
-			  text="安置:内側→外側"
-			  duration="12" />
+			  text="安置:内側→（外側）"
+			icon="AOEOutside.png"
+			  duration="9" />
+			<v-notice
+			  text="安置:　　→ 外側"
+			icon="AOEInside.png"
+			delay="10"
+			  duration="13" />
 		</t>
 
 		<!--ハイジャンプの人数カウント-->
 		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds">
 			<expressions>
-				<set name="highjump_count_9" value="EVAL(VAR['highjump_count']+1,N0)" />
+				<set name="highjump_count_9" value="EVAL(VAR['highjump_count_9']+1,N0)" />
 			</expressions>
 		</t>
 		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds">
 			<expressions>
-				<set name="highjump_count_30" value="EVAL(VAR['highjump_count']+1,N0)" />
+				<set name="highjump_count_30" value="EVAL(VAR['highjump_count_30']+1,N0)" />
 			</expressions>
 		</t>
 
@@ -923,11 +935,12 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 
-
+		<!--ジャンプ1回目、1人だけジャンプ-->
 		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" sync-count="8">
-			if (h_jump1 == True) {
-			if (highjump_count_9 == 1) {
-			<!--ジャンプ1回目、1人だけジャンプ-->
+			<expressions>
+				<pre name="h_jump1" value="True" />
+				<pre name="highjump_count_9" value="1" />
+			</expressions>
 			<v-notice
 			text="塔1:その場【C】"
 			icon="C.png"
@@ -936,9 +949,14 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			text="塔踏み:3回目【C】→誘導"
 			icon="C.png"
 			duration="36" />
-			}
-			if (highjump_count_9 == 3) {
-			<!--ジャンプ1回目、3人ジャンプ-->
+		</t>
+
+		<!--ジャンプ1回目、3人ジャンプ-->
+		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" sync-count="8">
+			<expressions>
+				<pre name="h_jump1" value="True" />
+				<pre name="highjump_count_9" value="3" />
+			</expressions>
 			<v-notice
 			text="塔1:その場【D】"
 			icon="D.png"
@@ -947,11 +965,14 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			text="塔踏み:2回目【4】\n →誘導→頭割り"
 			icon="4.png"
 			duration="25" />
-			}
-			}
-			if (h_jump3 == True) {
-			if (highjump_count_30 == 1) {
-			<!--ジャンプ3回目、1人だけジャンプ-->
+		</t>
+
+		<!--ジャンプ3回目、1人だけジャンプ-->
+		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" sync-count="8">
+			<expressions>
+				<pre name="h_jump3" value="True" />
+				<pre name="highjump_count_30" value="1" />
+			</expressions>
 			<v-notice
 			text="塔踏み:1回目【C】→誘導"
 			icon="C.png"
@@ -960,9 +981,14 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			text="塔3:その場【C】"
 			icon="C.png"
 			duration="30" />
-			}
-			if (highjump_count_30 == 3) {
-			<!--ジャンプ3回目、3人ジャンプ-->
+		</t>
+
+		<!--ジャンプ3回目、3人ジャンプ-->
+		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" sync-count="8">
+			<expressions>
+				<pre name="h_jump3" value="True" />
+				<pre name="highjump_count_30" value="3" />
+			</expressions>
 			<v-notice
 			text="塔踏み:1回目【D】→誘導"
 			icon="D.png"
@@ -971,12 +997,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			text="塔3:その場【D】"
 			icon="D.png"
 			duration="30" />
-			}
-			}
-
-
 		</t>
-
 
 	</s>
 
