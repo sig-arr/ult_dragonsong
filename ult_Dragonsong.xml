@@ -753,39 +753,23 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="019" sync="ニーズヘッグ:殺す、殺す、殺す！" />
 		<a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="マーカーつくよ" />
 		<a time="025" text="堕天のドラゴンダイブ" sync="ニーズヘッグの「堕天のドラゴンダイブ」" />
-		<a time="026" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="">
-			<v-notice
-			  text="頭割りしたら･･･"
-			  duration="8" />
-		</a>
+		<a time="026" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
 		<!--a time="033" text="牙尾の連旋" sync="ニーズヘッグの「牙尾の連旋」" /-->
 		<!--塔1回目-->
 		<a time="034" text="塔1回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔1回目" />
-		<a time="035" text="（軽◎）頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="リプ、頭割り"  notice-o="-6" />
+		<a time="035" text="（軽◎）頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り"  notice-o="-6" />
 		<a time="038" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
-		<a time="040" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み1回目">
-			<v-notice
-			  text="2番の塔捨てる準備だよ"
-			  duration="5" />
-		</a>
+		<a time="040" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み1回目" />
 		<a time="041" text="大車輪2" notice="大車輪" />
 		<a time="043" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
 		<!--塔2回目-->
 		<a time="044" text="塔2回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔2回目" />
-		<a time="048" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" >
-			<v-notice
-			  text="2番　誘導してから頭割り　頭割り終わったら･･･"
-			  duration="5" />
-		</a>
+		<a time="048" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
 		<a time="050" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み2回目" />
-		<a time="053" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" >
-			<v-notice
-			  text="2番　塔入るよ"
-			  duration="5" />
-		</a>
+		<a time="053" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
 		<!--塔3回目-->
 		<a time="055" text="塔3回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔3回目" />
-		<a time="056" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
+		<a time="056" text="（軽◎）頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="リプ、頭割り" />
 		<a time="059" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
 		<a time="061" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み3回目" />
 		<a time="062" text="大車輪2" notice="大車輪" />
@@ -843,15 +827,12 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ハイジャンプ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="ジャンプいち" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ジャンプいち" >
 			<expressions>
 				<set name="h_jump1" value="True" />
 			</expressions>
-			<v-notice
-		      text="塔1:その場,塔踏み:2回目or3回目"
-		      duration="9" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="ジャンプに" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" text="ジャンプに" >
 			<v-notice
 		      text="塔2:その場【1】"
 			icon="1.png"
@@ -861,16 +842,13 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="D.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="ジャンプさん" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ジャンプさん" >
 			<expressions>
 				<set name="h_jump3" value="True" />
 			</expressions>
-			<v-notice
-		      text="塔踏み:1回目,塔3:その場"
-		      duration="30" />
 		</t>
 		<!--スパインダイブ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="スパインいち" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" text="スパインいち" >
 			<v-notice
 			text="塔1:前【D】"
 			 icon="D.png"
@@ -880,7 +858,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="4.png"
 			duration="25" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="スパインに" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" text="スパインに" >
 			<v-notice
 		      text="塔2:前【1】"
 			icon="1.png"
@@ -890,7 +868,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="D.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="スパインさん" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" text="スパインさん" >
 			<v-notice
 			text="塔踏み:1回目【D】→誘導"
 			icon="D.png"
@@ -901,7 +879,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 		<!--イルーシブ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="イルーシブいち" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" text="イルーシブいち" >
 			<v-notice
 			  text="塔1:後ろ【B】"
 			icon="B.png"
@@ -911,17 +889,17 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="4.png"
 			duration="25" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="イルーシブに" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" text="イルーシブに" >
 			<v-notice
-		      text="塔2:後ろ【1】"
-			icon="1.png"
+		      text="塔2:後ろ【2】"
+			icon="2.png"
 		      duration="19" />
 			<v-notice
 			text="塔踏み:3回目【D】→誘導"
 			icon="D.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="イルーシブさん" >
+		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" text="イルーシブさん" >
 			<v-notice
 			text="塔踏み:1回目【B】→誘導"
 			icon="B.png"
