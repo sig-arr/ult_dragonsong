@@ -70,7 +70,7 @@
 	</t>
 
 	<!--ハイジャンプの人数カウント　9秒-->
-	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ターゲッティング9_count">
+	<t no="9" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ターゲッティング9_count">
 		<expressions>
 			<set name="highjump_count_9" value="EVAL(VAR['highjump_count_9']+1,N0)" />
 		</expressions>
@@ -116,7 +116,7 @@
 	}
 
 	<!--ハイジャンプの人数カウント 30秒-->
-	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
+	<t no="19" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
 		<expressions>
 			<set name="highjump_count_30" value="EVAL(VAR['highjump_count_30']+1,N0)" />
 		</expressions>
