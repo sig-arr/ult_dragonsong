@@ -1,0 +1,380 @@
+<s name="ニーズP1">
+	<a time="005" sync="ニーズヘッグ:これぞ終焉の竜詩よ！">
+		<expressions>
+			<!-- 変数の初期化 -->
+			<set name="highjump_count_9" value="0" />
+			<set name="highjump_count_30" value="0" />
+			<set name="h_jump1" value="False" />
+			<set name="h_jump2" value="False" />
+			<set name="h_jump3" value="False" />
+			<set name="MyPosition_9" count="0" />
+			<set name="MyPosition_19" count="0" />
+			<set name="MyPosition_30" count="0" />
+		</expressions>
+	</a>
+	<a time="006" text="終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="終焉の竜詩。"  />
+	<a time="011" sync="ニーズヘッグ:我が竜詩を耐えるというのか……！ フレースヴェルグの力を使いこなしていると！？" />
+	<a time="011" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
+	<a time="014" text="攻撃" />
+	<a time="018" text="攻撃" />
+	<a time="019" sync="ニーズヘッグ:殺す、殺す、殺す！" />
+	<a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="マーカーつくよ" />
+	<a time="025" text="堕天のドラゴンダイブ" sync="ニーズヘッグの「堕天のドラゴンダイブ」" />
+	<a time="026" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
+	<!--a time="033" text="牙尾の連旋" sync="ニーズヘッグの「牙尾の連旋」" /-->
+	<!--塔1回目-->
+	<a time="034" text="塔1回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔1回目、頭割り" />
+	<a time="035" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="" />
+	<a time="038" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="" />
+	<a time="040" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み1回目" />
+	<a time="041" text="大車輪2" notice="大車輪" />
+	<a time="043" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="誘導" />
+	<!--塔2回目-->
+	<a time="044" text="塔2回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔2回目"  />
+	<a time="048" text="連旋確認" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
+	<a time="050" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み2回目"  />
+	<a time="053" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="誘導" />
+	<!--塔3回目-->
+	<a time="055" text="塔3回目" sync="ニーズヘッグの「ダークハイジャンプ」" notice="塔3回目" />
+	<a time="056" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
+	<a time="059" text="大車輪1" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
+	<a time="061" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔踏み3回目" />
+	<a time="062" text="大車輪2" notice="大車輪" />
+	<a time="064" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+	<a time="066" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
+	<a time="069" text="攻撃" />
+	<a time="074" text="ドラッケンランス" sync="ニーズヘッグの「ドラッケンランス」" notice="ドラッケンランス" />
+	<!--塔4回目-->
+	<a time="075" text="塔を確認" sync="ニーズヘッグは「ダークドラゴンダイブ」の構え。" notice="塔を確認" />
+	<a time="081" text="塔踏み" sync="ニーズヘッグの「ダークドラゴンダイブ」" notice="塔が発動" />
+	<a time="083" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" />
+	<a time="088" text="ソウルテザー" sync="ニーズヘッグの「ソウルテザー」" notice="ソウルテザー。" />
+	<a time="093" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
+	<a time="096" text="攻撃" />
+	<a time="099" text="攻撃" />
+	<a time="102" text="攻撃" />
+	<a time="105" text="攻撃" />
+	<a time="112" text="ドラッケンランス" sync="ニーズヘッグの「ドラッケンランス」" />
+	<a time="113" text="時間切れ開始" sync="ニーズヘッグは「最期の咆哮」の構え。" notice="" />
+	<t sync="アルフィノ:エスティニアン殿！" goto="ニーズP2" />
+
+	<t sync="^14:6712" notice="牙から尾" >
+		<v-notice
+		text="安置:外側→内側"
+		duration="10" />
+	</t>
+	<t sync="^14:6713" notice="尾から牙" >
+		<v-notice
+		text="安置:内側→外側"
+		duration="10" />
+	</t>
+
+	<!--ハイジャンプの人数カウント　9秒-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ターゲッティング9_count">
+		<expressions>
+			<set name="highjump_count_9" value="EVAL(VAR['highjump_count_9']+1,N0)" />
+		</expressions>
+	</t>
+	@{
+
+	string[] JobOrder_high = {"DRK", "PLD", "WHM", "SCH", "DRG","NIN","DNC", "RDM"} ; // 並び順
+	int priority_9 = 0;
+	bool isMyFront_9 = true;
+	foreach (string job in JobOrder_high) {
+	@:<t no="@priority_9" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" sync-count="1" >
+		if (job == Model.Player.Job) { isMyFront_9 = !isMyFront_9; }
+		if (isMyFront_9) {
+		@:<expressions>
+			@:<set name="MyPosition_9" count="+1" />
+			@:
+		</expressions>
+		}
+		@:
+	</t>
+	priority_9++;
+	}
+	}
+
+	<!--ハイジャンプの人数カウント 19秒-->
+	@{
+
+	int priority_19 = 20;
+	bool isMyFront_19 = true;
+	foreach (string job in JobOrder_high) {
+	@:<t no="@priority_19" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" sync-count="1" >
+		if (job == Model.Player.Job) { isMyFront_19 = !isMyFront_19; }
+		if (isMyFront_19) {
+		@:<expressions>
+			@:<set name="MyPosition_19" count="+1" />
+			@:
+		</expressions>
+		}
+		@:
+	</t>
+	priority_19++;
+	}
+	}
+
+	<!--ハイジャンプの人数カウント 30秒-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
+		<expressions>
+			<set name="highjump_count_30" value="EVAL(VAR['highjump_count_30']+1,N0)" />
+		</expressions>
+	</t>
+	@{
+
+	int priority_30 = 10;
+	bool isMyFront_30 = true;
+	foreach (string job in JobOrder_high) {
+	@:<t no="@priority_30" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" sync-count="1" >
+		if (job == Model.Player.Job) { isMyFront_30 = !isMyFront_30; }
+		if (isMyFront_30) {
+		@:<expressions>
+			@:<set name="MyPosition_30" count="+1" />
+			@:
+		</expressions>
+		}
+		@:
+	</t>
+	priority_30++;
+	}
+	}
+
+	<!--ハイジャンプ-->
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ジャンプいち" >
+		<expressions>
+			<set name="h_jump1" value="True" />
+		</expressions>
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" text="ジャンプに" >
+		<expressions>
+			<set name="h_jump2" value="True" />
+		</expressions>
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ジャンプさん" >
+		<expressions>
+			<set name="h_jump3" value="True" />
+		</expressions>
+	</t>
+	<!--スパインダイブ-->
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" text="スパインいち" >
+		<v-notice
+		text="塔1:前【D】"
+		 icon="D.png"
+		duration="9" />
+		<v-notice
+		text="塔踏み:2回目【1側】\n →誘導"
+		icon="1.png"
+		duration="25" />
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" text="スパインに" >
+		<v-notice
+		  text="塔2:前【1側】"
+		icon="1.png"
+		  duration="19" />
+		<v-notice
+		text="塔踏み:3回目【D】→誘導"
+		icon="D.png"
+		duration="36" />
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" text="スパインさん" >
+		<v-notice
+		text="塔踏み:1回目【D】→誘導"
+		icon="D.png"
+		duration="15" />
+		<v-notice
+		text="塔3:前【D】"
+		icon="D.png"
+		duration="30" />
+	</t>
+	<!--イルーシブ-->
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" text="イルーシブいち" >
+		<v-notice
+		  text="塔1:後ろ【B】"
+		icon="B.png"
+		  duration="9" />
+		<v-notice
+		text="塔踏み:2回目【2側】\n →誘導"
+		icon="2.png"
+		duration="25" />
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" text="イルーシブに" >
+		<v-notice
+		  text="塔2:後ろ【2側】"
+		icon="2.png"
+		  duration="19" />
+		<v-notice
+		text="塔踏み:3回目【B】→誘導"
+		icon="B.png"
+		duration="36" />
+	</t>
+	<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" text="イルーシブさん" >
+		<v-notice
+		text="塔踏み:1回目【B】→誘導"
+		icon="B.png"
+		duration="15" />
+		<v-notice
+		text="塔3:後ろ【B】"
+		icon="B.png"
+		duration="30" />
+	</t>
+
+	<!--ジャンプ1回目、1人だけジャンプ-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-1" sync-count="8">
+		<expressions>
+			<pre name="h_jump1" value="True" />
+			<pre name="highjump_count_9" value="1" />
+		</expressions>
+		<v-notice
+		text="塔1:その場【C】"
+		icon="C.png"
+		duration="9" />
+		<v-notice
+		text="塔踏み:3回目【C】→誘導"
+		icon="C.png"
+		duration="36" />
+	</t>
+
+	<!--ジャンプ1回目、3人ジャンプ-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos0" sync-count="8">
+		<expressions>
+			<pre name="h_jump1" value="True" />
+			<pre name="highjump_count_9" value="3" />
+			<pre name="MyPosition_9" count="0" />
+		</expressions>
+		<v-notice
+		text="塔1:その場【D】"
+		icon="D.png"
+		duration="9" />
+		<v-notice
+		text="塔踏み:2回目【1側】\n →誘導"
+		icon="1.png"
+		duration="25" />
+	</t>
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos1" sync-count="8">
+		<expressions>
+			<pre name="h_jump1" value="True" />
+			<pre name="highjump_count_9" value="3" />
+			<pre name="MyPosition_9" count="1" />
+		</expressions>
+		<v-notice
+		text="塔1:その場【C】"
+		icon="D.png"
+		duration="C" />
+		<v-notice
+		text="塔踏み:3回目【C】\n →誘導"
+		icon="C.png"
+		duration="36" />
+	</t>
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos2" sync-count="8">
+		<expressions>
+			<pre name="h_jump1" value="True" />
+			<pre name="highjump_count_9" value="3" />
+			<pre name="MyPosition_9" count="2" />
+		</expressions>
+		<v-notice
+		text="塔1:その場【B】"
+		icon="B.png"
+		duration="C" />
+		<v-notice
+		text="塔踏み:2回目【2側】\n →誘導"
+		icon="2.png"
+		duration="25" />
+	</t>
+
+	<!--ジャンプ2回目、2人ジャンプ-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos0" sync-count="8">
+		<expressions>
+			<pre name="h_jump2" value="True" />
+			<pre name="MyPosition_19" count="0" />
+		</expressions>
+		<v-notice
+		  text="塔2:その場【1】→北頭割りへ"
+		icon="1.png"
+		  duration="19" />
+		<v-notice
+		text="塔踏み:3回目【D】→誘導"
+		icon="D.png"
+		duration="36" />
+	</t>
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos1" sync-count="8">
+		<expressions>
+			<pre name="h_jump2" value="True" />
+			<pre name="MyPosition_19" count="1" />
+		</expressions>
+		<v-notice
+		  text="塔2:その場【2】→北頭割りへ"
+		icon="2.png"
+		  duration="19" />
+		<v-notice
+		text="塔踏み:3回目【B】→誘導"
+		icon="B.png"
+		duration="36" />
+	</t>
+
+
+	<!--ジャンプ3回目、1人だけジャンプ-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-1" sync-count="8">
+		<expressions>
+			<pre name="h_jump3" value="True" />
+			<pre name="highjump_count_30" value="1" />
+		</expressions>
+		<v-notice
+		text="塔踏み:1回目【C】→誘導"
+		icon="C.png"
+		duration="15" />
+		<v-notice
+		text="塔3:その場【C】→離れる"
+		icon="C.png"
+		duration="30" />
+	</t>
+
+	<!--ジャンプ3回目、3人ジャンプ-->
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos0" sync-count="8">
+		<expressions>
+			<pre name="h_jump3" value="True" />
+			<pre name="highjump_count_30" value="3" />
+			<pre name="MyPosition_30" count="0" />
+		</expressions>
+		<v-notice
+		text="塔踏み:1回目【D】→誘導"
+		icon="D.png"
+		duration="15" />
+		<v-notice
+		text="塔3:その場【D】→離れる"
+		icon="D.png"
+		duration="30" />
+	</t>
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos1" sync-count="8">
+		<expressions>
+			<pre name="h_jump3" value="True" />
+			<pre name="highjump_count_30" value="3" />
+			<pre name="MyPosition_30" count="1" />
+		</expressions>
+		<v-notice
+		text="塔踏み:1回目【C】→誘導"
+		icon="C.png"
+		duration="15" />
+		<v-notice
+		text="塔3:その場【C】→離れる"
+		icon="B.png"
+		duration="30" />
+	</t>
+	<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos2" sync-count="8">
+		<expressions>
+			<pre name="h_jump3" value="True" />
+			<pre name="highjump_count_30" value="3" />
+			<pre name="MyPosition_30" count="2" />
+		</expressions>
+		<v-notice
+		text="塔踏み:1回目【B】→誘導"
+		icon="B.png"
+		duration="15" />
+		<v-notice
+		text="塔3:その場【B】→離れる"
+		icon="B.png"
+		duration="30" />
+	</t>
+
+
+</s>
