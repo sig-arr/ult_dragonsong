@@ -816,7 +816,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ハイジャンプの人数カウント　9秒-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ターゲッティング9_count">
+		<t no ="9" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ターゲッティング9_count">
 			<expressions>
 				<set name="highjump_count_9" value="EVAL(VAR['highjump_count_9']+1,N0)" />
 			</expressions>
@@ -864,7 +864,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		}
 
 		<!--ハイジャンプの人数カウント 30秒-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
+		<t no ="29" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
 			<expressions>
 				<set name="highjump_count_30" value="EVAL(VAR['highjump_count_30']+1,N0)" />
 			</expressions>
@@ -890,23 +890,23 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		}
 
 		<!--ハイジャンプ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ジャンプいち" >
+		<t no="30" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ジャンプいち" >
 			<expressions>
 				<set name="h_jump1" value="True" />
 			</expressions>
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" text="ジャンプに" >
+		<t no="31" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" text="ジャンプに" >
 			<expressions>
 				<set name="h_jump2" value="True" />
 			</expressions>
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ジャンプさん" >
+		<t no="32" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ジャンプさん" >
 			<expressions>
 				<set name="h_jump3" value="True" />
 			</expressions>
 		</t>
 		<!--スパインダイブ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" text="スパインいち" >
+		<t no="33" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" text="スパインいち" >
 			<v-notice
 			text="塔1:前【D】"
 			 icon="D.png"
@@ -916,7 +916,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="1.png"
 			duration="25" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" text="スパインに" >
+		<t no="34" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" text="スパインに" >
 			<v-notice
 		      text="塔2:前【1側】"
 			icon="1.png"
@@ -926,7 +926,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="D.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" text="スパインさん" >
+		<t no="35" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" text="スパインさん" >
 			<v-notice
 			text="塔踏み:1回目【D】→誘導"
 			icon="D.png"
@@ -937,7 +937,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 		<!--イルーシブ-->
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" text="イルーシブいち" >
+		<t no="36" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" text="イルーシブいち" >
 			<v-notice
 			  text="塔1:後ろ【B】"
 			icon="B.png"
@@ -947,7 +947,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="2.png"
 			duration="25" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" text="イルーシブに" >
+		<t no="37" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" text="イルーシブに" >
 			<v-notice
 		      text="塔2:後ろ【2側】"
 			icon="2.png"
@@ -957,7 +957,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="B.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" text="イルーシブさん" >
+		<t no="38" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" text="イルーシブさん" >
 			<v-notice
 			text="塔踏み:1回目【B】→誘導"
 			icon="B.png"
@@ -969,7 +969,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ジャンプ1回目、1人だけジャンプ-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-1" sync-count="8">
+		<t no="39" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-1" sync-count="8">
 			<expressions>
 				<pre name="h_jump1" value="True" />
 				<pre name="highjump_count_9" value="1" />
@@ -985,7 +985,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ジャンプ1回目、3人ジャンプ-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos0" sync-count="8">
+		<t no="40" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos0" sync-count="8">
 			<expressions>
 				<pre name="h_jump1" value="True" />
 				<pre name="highjump_count_9" value="3" />
@@ -1000,7 +1000,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="1.png"
 			duration="25" />
 		</t>
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos1" sync-count="8">
+		<t no="41" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos1" sync-count="8">
 			<expressions>
 				<pre name="h_jump1" value="True" />
 				<pre name="highjump_count_9" value="3" />
@@ -1015,7 +1015,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="C.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos2" sync-count="8">
+		<t no="42" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-3-pos2" sync-count="8">
 			<expressions>
 				<pre name="h_jump1" value="True" />
 				<pre name="highjump_count_9" value="3" />
@@ -1032,7 +1032,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ジャンプ2回目、2人ジャンプ-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos0" sync-count="8">
+		<t no="43" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos0" sync-count="8">
 			<expressions>
 				<pre name="h_jump2" value="True" />
 				<pre name="MyPosition_19" count="0" />
@@ -1046,7 +1046,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="D.png"
 			duration="36" />
 		</t>
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos1" sync-count="8">
+		<t no="44" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング2-pos1" sync-count="8">
 			<expressions>
 				<pre name="h_jump2" value="True" />
 				<pre name="MyPosition_19" count="1" />
@@ -1063,7 +1063,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 
 
 		<!--ジャンプ3回目、1人だけジャンプ-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-1" sync-count="8">
+		<t no="45" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-1" sync-count="8">
 			<expressions>
 				<pre name="h_jump3" value="True" />
 				<pre name="highjump_count_30" value="1" />
@@ -1079,7 +1079,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 
 		<!--ジャンプ3回目、3人ジャンプ-->
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos0" sync-count="8">
+		<t no="46" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos0" sync-count="8">
 			<expressions>
 				<pre name="h_jump3" value="True" />
 				<pre name="highjump_count_30" value="3" />
@@ -1094,7 +1094,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="D.png"
 			duration="30" />
 		</t>
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos1" sync-count="8">
+		<t no="47" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos1" sync-count="8">
 			<expressions>
 				<pre name="h_jump3" value="True" />
 				<pre name="highjump_count_30" value="3" />
@@ -1109,7 +1109,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			icon="B.png"
 			duration="30" />
 		</t>
-		<t sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos2" sync-count="8">
+		<t no="48" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos2" sync-count="8">
 			<expressions>
 				<pre name="h_jump3" value="True" />
 				<pre name="highjump_count_30" value="3" />
