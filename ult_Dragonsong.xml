@@ -740,6 +740,12 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 				<set name="MyPosition_9" count="0" />
 				<set name="MyPosition_19" count="0" />
 				<set name="MyPosition_30" count="0" />
+				<set name="Nizu_NW_1" count="false" />
+				<set name="Nizu_SW_1" count="false" />
+				<set name="Nizu_NE_Sen" count="false" />
+				<set name="Nizu_SE_Sen" count="false" />
+				<set name="Nizu_NW_Sen" count="false" />
+				<set name="Nizu_SW_Sen" count="false" />
 			</expressions>
 		</a>
 		<a time="006" text="（軽★）終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="ミッショ、終焉の竜詩。"  notice-o="-6" />
@@ -773,6 +779,9 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="064" text="直線誘導" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="直線誘導" sync-s="-3" sync-e="3" />
 		<a time="066" text="攻撃" sync="ニーズヘッグの「攻撃」" sync-count="1" />
 		<a time="069" text="攻撃" />
+		<a time="073" text="MarkingPos取得◇ドラッケンランス◇" >
+			<dump target="Position" />
+		</a>
 		<a time="074" text="ドラッケンランス" sync="ニーズヘッグの「ドラッケンランス」" notice="ドラッケンランス、かくにん！" notice-o="-6" />
 		<!--塔4回目-->
 		<a time="075" text="塔を確認" sync="ニーズヘッグは「ダークドラゴンダイブ」の構え。" notice="塔を確認" />
@@ -1125,6 +1134,114 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 
+		<!--塔優先TEST＠MT-->
+		<t no ="50" sync="^14:6717:.*92.00,108.00,"  >
+			<expressions>
+				<set name="Nizu_SW_1" value="True" />
+			</expressions>
+		</t>
+		<t no ="51" sync="^14:6717:.*92.00,92.00,"  >
+			<expressions>
+				<set name="Nizu_NW_1" value="True" />
+			</expressions>
+		</t>
+		<t no="52" sync="ニーズヘッグ starts using ダークドラゴンダイブ on ニーズヘッグ" text="塔1左2つ" sync-count="4">
+			<expressions>
+				<pre name="Nizu_SW_1" value="True" />
+				<pre name="Nizu_NW_1" value="True" />
+			</expressions>
+			<v-notice
+			text="★塔は右下★急げー！"
+			icon="3.png"
+			duration="5" />
+		</t>
+		<t no="53" sync="ニーズヘッグ starts using ダークドラゴンダイブ on ニーズヘッグ" text="塔1左1つ" sync-count="4">
+			<expressions>
+				<pre name="Nizu_NW_1" value="True" />
+				<pre name="Nizu_SW_1" value="false" />
+			</expressions>
+			<v-notice
+			text="★塔は左下★"
+			icon="4.png"
+			duration="5" />
+		</t>
+		<t no="54" sync="ニーズヘッグ starts using ダークドラゴンダイブ on ニーズヘッグ" text="塔1左1つ" sync-count="4">
+			<expressions>
+				<pre name="Nizu_NW_1" value="false" />
+				<pre name="Nizu_SW_1" value="false" />
+			</expressions>
+			<v-notice
+			text="★塔はそのまま★"
+			icon="1.png"
+			duration="5" />
+		</t>
+
+		<!--線優先TEST＠MT-->
+		<t no ="55" sync="^14:670A:.*92.00,92.00,"  >
+			<expressions>
+				<set name="Nizu_NW_Sen" value="True" />
+			</expressions>
+		</t>
+		<t no ="56" sync="^14:670A:.*92.00,107.99,"  >
+			<expressions>
+				<set name="Nizu_SW_Sen" value="True" />
+			</expressions>
+		</t>
+		<t no ="57" sync="^14:670A:.*107.99,92.00,"  >
+			<expressions>
+				<set name="Nizu_NE_Sen" value="True" />
+			</expressions>
+		</t>
+		<t no ="58" sync="^14:670A:.*107.99,107.99,"  >
+			<expressions>
+				<set name="Nizu_SE_Sen" value="True" />
+			</expressions>
+		</t>
+
+		<t no="59" sync="^14:670A:ニーズヘッグ starts using ゲイルスコグル on ニーズヘッグ" text="線は右上" notice="ボスとる、ボス取る" sync-count="3">
+			<expressions>
+				<pre name="Nizu_NW_Sen" value="True" />
+				<pre name="Nizu_SW_Sen" value="True" />
+				<pre name="Nizu_SE_Sen" value="True" />
+			</expressions>
+			<v-notice
+			text="◎ボス取り◎（線は右上から）"
+			icon="Stack.png"
+			duration="5" />
+		</t>
+		<t no="59" sync="^14:670A:ニーズヘッグ starts using ゲイルスコグル on ニーズヘッグ" text="線は右下" notice="ボスとる、ボス取る" sync-count="3">
+			<expressions>
+				<pre name="Nizu_NW_Sen" value="True" />
+				<pre name="Nizu_SW_Sen" value="True" />
+				<pre name="Nizu_NE_Sen" value="True" />
+			</expressions>
+			<v-notice
+			text="◎ボス取り◎（線は右下から）"
+			icon="Stack.png"
+			duration="5" />
+		</t>
+		<t no="61" sync="^14:670A:ニーズヘッグ starts using ゲイルスコグル on ニーズヘッグ" text="線は左上" notice="ざことる、上側" sync-count="3">
+			<expressions>
+				<pre name="Nizu_SW_Sen" value="True" />
+				<pre name="Nizu_NE_Sen" value="True" />
+				<pre name="Nizu_SE_Sen" value="True" />
+			</expressions>
+			<v-notice
+			text="★線は左上から★（雑魚取り）"
+			icon="West.png"
+			duration="5" />
+		</t>
+		<t no="62" sync="^14:670A:ニーズヘッグ starts using ゲイルスコグル on ニーズヘッグ" text="線は左下" notice="ざことる、下側" sync-count="3">
+			<expressions>
+				<pre name="Nizu_NW_Sen" value="True" />
+				<pre name="Nizu_NE_Sen" value="True" />
+				<pre name="Nizu_SE_Sen" value="True" />
+			</expressions>
+			<v-notice
+			text="★線は左下から★（雑魚取り）"
+			icon="West.png"
+			duration="5" />
+		</t>
 
 	</s>
 
@@ -1140,6 +1257,9 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="033" text="黄色玉" notice="きいろ" />
 		<a time="038" text="青色玉" notice="あお" />
 		<a time="048" text="ダイブ準備" sync="邪竜の左眼は「ミラージュダイブ」の構え。" notice="ダイブの準備" />
+		<a time="052" text="MarkingPos取得◇ミラージュダイブ◇" >
+			<dump target="Position" />
+		</a>
 		<a time="053" text="ダイブ4" sync="ニーズヘッグの「ミラージュダイブ」" sync-count="1" notice="ダイブ1回目" />
 		<a time="058" text="ダイブ3" notice="ダイブ2回目" />
 		<a time="063" text="ダイブ2" notice="ダイブ3回目" />
