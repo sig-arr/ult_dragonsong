@@ -252,9 +252,9 @@
 		<!--a time="010" text="スピア" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" /-->
 		<a time="030" text="スピア" sync="聖騎士ゼフィラン:喰らえッ！" />
 		<a time="036" text="光翼閃4" sync="^15:[id8]:聖騎士シャリベル:6319:光翼閃" sync-count="1" />
-		<a time="041" text="光翼閃3" sync="^15:[id8]:聖騎士シャリベル:6319:光翼閃" sync-count="2" />
-		<a time="046" text="光翼閃2" sync="^15:[id8]:聖騎士シャリベル:6319:光翼閃" sync-count="3" />
-		<a time="051" text="光翼閃1" sync="^15:[id8]:聖騎士シャリベル:6319:光翼閃" sync-count="4" />
+		<a time="041" text="光翼閃3" />
+		<a time="046" text="光翼閃2" />
+		<a time="051" text="光翼閃1" />
 		<a time="057" text="ピュア・オブ・ハート" sync="聖騎士シャリベルの「ピュア・オブ・ハート」" notice="" />
 		<a time="070" text="移行待ち" />
 		<t sync="騎神トールダン:神に抗う光の使徒よ" goto="ナイツP1" />
@@ -826,43 +826,47 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 				<set name="highjump_count_9" value="EVAL(VAR['highjump_count_9']+1,N0)" />
 			</expressions>
 		</t>
-  @{
-  
-    string[] JobOrder_high = {"DRK", "PLD", "WHM", "SCH", "DRG","NIN","DNC", "RDM"} ; // 並び順
-    int priority_9 = 0;
-    bool isMyFront_9 = true;
-    foreach (string job in JobOrder_high) {
-      @:<t no="@priority_9" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" sync-count="1" >
-        if (job == Model.Player.Job) { isMyFront_9 = !isMyFront_9; }
-        if (isMyFront_9) {
-          @:<expressions>
-            @:	<set name="MyPosition_9" count="+1" />
-          @:</expressions>
-        }
-        @:	<v-notice order="@priority_9" duration="5" duration-visible="false" job-icon="true" />
-      @:</t>
-      priority_9++;
-    }
-  }
+		@{
+
+		string[] JobOrder_high = {"DRK", "PLD", "WHM", "SCH", "DRG","NIN","DNC", "RDM"} ; // 並び順
+		int priority_9 = 0;
+		bool isMyFront_9 = true;
+		foreach (string job in JobOrder_high) {
+		@:<t no="@priority_9" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" sync-count="1" >
+			if (job == Model.Player.Job) { isMyFront_9 = !isMyFront_9; }
+			if (isMyFront_9) {
+			@:<expressions>
+				@:	<set name="MyPosition_9" count="+1" />
+				@:
+			</expressions>
+			}
+			@:	<v-notice order="@priority_9" duration="5" duration-visible="false" job-icon="true" />
+			@:
+		</t>
+		priority_9++;
+		}
+		}
 
 		<!--ハイジャンプの人数カウント 19秒-->
-  @{
+		@{
 
-    int priority_19 = 20;
-    bool isMyFront_19 = true;
-    foreach (string job in JobOrder_high) {
-      @:<t no="@priority_19" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" sync-count="1" >
-        if (job == Model.Player.Job) { isMyFront_19 = !isMyFront_19; }
-        if (isMyFront_19) {
-          @:<expressions>
-            @:	<set name="MyPosition_19" count="+1" />
-          @:</expressions>
-        }
-        @:	<v-notice order="@priority_19" duration="5" duration-visible="false" job-icon="true" />
-      @:</t>
-      priority_19++;
-    }
-  }
+		int priority_19 = 20;
+		bool isMyFront_19 = true;
+		foreach (string job in JobOrder_high) {
+		@:<t no="@priority_19" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" sync-count="1" >
+			if (job == Model.Player.Job) { isMyFront_19 = !isMyFront_19; }
+			if (isMyFront_19) {
+			@:<expressions>
+				@:	<set name="MyPosition_19" count="+1" />
+				@:
+			</expressions>
+			}
+			@:	<v-notice order="@priority_19" duration="5" duration-visible="false" job-icon="true" />
+			@:
+		</t>
+		priority_19++;
+		}
+		}
 
 		<!--ハイジャンプの人数カウント 30秒-->
 		<t no ="29" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" text="ターゲッティング30_count">
@@ -870,23 +874,25 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 				<set name="highjump_count_30" value="EVAL(VAR['highjump_count_30']+1,N0)" />
 			</expressions>
 		</t>
-  @{
+		@{
 
-    int priority_30 = 10;
-    bool isMyFront_30 = true;
-    foreach (string job in JobOrder_high) {
-      @:<t no="@priority_30" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" sync-count="1" >
-        if (job == Model.Player.Job) { isMyFront_30 = !isMyFront_30; }
-        if (isMyFront_30) {
-          @:<expressions>
-            @:	<set name="MyPosition_30" count="+1" />
-          @:</expressions>
-        }
-        @:	<v-notice order="@priority_30" duration="5" duration-visible="false" job-icon="true" />
-      @:</t>
-      priority_30++;
-    }
-  }
+		int priority_30 = 10;
+		bool isMyFront_30 = true;
+		foreach (string job in JobOrder_high) {
+		@:<t no="@priority_30" sync="^1A:[id8]:[@job] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" sync-count="1" >
+			if (job == Model.Player.Job) { isMyFront_30 = !isMyFront_30; }
+			if (isMyFront_30) {
+			@:<expressions>
+				@:	<set name="MyPosition_30" count="+1" />
+				@:
+			</expressions>
+			}
+			@:	<v-notice order="@priority_30" duration="5" duration-visible="false" job-icon="true" />
+			@:
+		</t>
+		priority_30++;
+		}
+		}
 
 		<!--ハイジャンプ-->
 		<t no="30" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" text="ジャンプいち" >
@@ -967,7 +973,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 
-			<!--ジャンプ1回目、1人だけジャンプ-->
+		<!--ジャンプ1回目、1人だけジャンプ-->
 		<t no="39" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング1-1" sync-count="8">
 			<expressions>
 				<pre name="h_jump1" value="True" />
@@ -1077,7 +1083,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 
-			<!--ジャンプ3回目、3人ジャンプ-->
+		<!--ジャンプ3回目、3人ジャンプ-->
 		<t no="46" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：" text="ターゲッティング3-3-pos0" sync-count="8">
 			<expressions>
 				<pre name="h_jump3" value="True" />
@@ -1124,6 +1130,70 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			duration="30" />
 		</t>
 
+		<!--鎖が誰とついたかの表示　-->
+
+		　		<!--終焉の竜詩で本体のIDを取得。-->
+		<t sync="^15:(?&lt;marker_Nizu&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:終焉の竜詩:" sync-count="1" >
+			<expressions>
+				<set name="Nizu_origin" value="0x${marker_Nizu}" />
+			</expressions>
+		</t>
+		<!--
+		<t text="ボス線 ➜${_pc}" sync="^23:EVAL(VAR['Nizu_origin'], X8):ニーズヘッグ:[id8]:[pc]:[id4]:" notice="" >
+			<v-notice
+			text="ボス線 ➜${_pc}"
+			  duration="7"
+			  job-icon="true"
+				sync-to-hide="^23:EVAL(VAR['Nizu_origin'], X8):ニーズヘッグ:[id8]:([DRK]|[PLD]):[id4]:" />
+		</t>
+-->
+		<!--                                   ^23:(?<marker_ZakoNizu>(?!4001FE34).*):ニーズヘッグ: -->
+		<t text="雑魚線 ➜${_pc}" sync="^23:(?&lt;marker_ZakoNizu&gt;(?!EVAL(VAR['Nizu_origin'], X8)).*):ニーズヘッグ:[id8]:[pc]:[id4]:" notice=""  sync-count="1" >
+			<expressions>
+				<set name="Nizu_ZakoSen" value="0x${marker_ZakoNizu}" />
+			</expressions>
+			<v-notice
+			text="雑魚線 ➜${_pc}"
+			  duration="7"
+			  job-icon="true"
+				sync-to-hide="^23:(?!EVAL(VAR['Nizu_origin'], X8)).*:ニーズヘッグ:[id8]:([DRK]|[PLD]):[id4]:" />
+		</t>
+
+		<!--
+
+ログ
+16:4000A76C:ニーズヘッグ:6718:ダークドラゴンダイブ:102E2B2A:Lilia Rain:150003:39980000:B80E:B7C0000:540E:B560000:1B:67188000:0:0:0:0:0:0:0:0:56804:56804:7900:10000:::108.23:91.42:0.00:-0.77:7083312:7083312:10000:10000:::108.00:92.00:0.00
+
+正規表現
+^16:4000AEF8:ニーズヘッグ:6718:ダークドラゴンダイブ:.*(92.00:108.00:0.00)
+
+-->
+		<t text="雑魚線 左上" sync="^1(5|6):EVAL(VAR['Nizu_ZakoSen'], X8):ニーズヘッグ:671[0-9A-F]:ダークドラゴンダイブ:.*(92.00:92.00:0.00)" notice=""  sync-count="1" >
+			<v-notice
+			text="★雑魚線★ ➜　【１】左上"
+			  duration="7"
+			icon="1.png" />
+		</t>
+		<t text="雑魚線 右上" sync="^1(5|6):EVAL(VAR['Nizu_ZakoSen'], X8):ニーズヘッグ:671[0-9A-F]:ダークドラゴンダイブ:.*(108.00:92.00:0.00)" notice=""  sync-count="1" >
+			<v-notice
+			text="★雑魚線★ ➜　【２】右上"
+			  duration="7"
+			icon="2.png" />
+		</t>
+		<t text="雑魚線 左下" sync="^1(5|6):EVAL(VAR['Nizu_ZakoSen'], X8):ニーズヘッグ:671[0-9A-F]:ダークドラゴンダイブ:.*(92.00:108.00:0.00)" notice=""  sync-count="1" >
+			<v-notice
+			text="★雑魚線★ ➜　【４】左下"
+			  duration="7"
+			icon="4.png" />
+		</t>
+		<t text="雑魚線 右下" sync="^1(5|6):EVAL(VAR['Nizu_ZakoSen'], X8):ニーズヘッグ:671[0-9A-F]:ダークドラゴンダイブ:.*(108.00:108.00:0.00)" notice=""  sync-count="1" >
+			<v-notice
+			text="★雑魚線★ ➜　【３】右下"
+			  duration="7"
+			icon="3.png" />
+		</t>
+
+
 		<!--線優先TEST＠MT-->
 		<t no ="50" sync="^14:670A:.*92.00,92.00," text="誘導NW">
 			<expressions>
@@ -1146,7 +1216,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			</expressions>
 		</t>
 
-		<t no="54" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="ボスとる、ボス取る" text="誘導NE" sync-count="3">
+		<t no="54" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="右上、右上" text="誘導NE" sync-count="3">
 			<expressions>
 				<pre name="Nizu_NW_Sen" value="True" />
 				<pre name="Nizu_SW_Sen" value="True" />
@@ -1154,10 +1224,10 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			</expressions>
 			<v-notice
 			text="◎ボス取り◎（線は右上から）"
-			icon="Stack.png"
+			icon="2.png"
 			duration="5" />
 		</t>
-		<t no="55" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="ボスとる、ボス取る" text="誘導SE" sync-count="3">
+		<t no="55" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="右下、右下" text="誘導SE" sync-count="3">
 			<expressions>
 				<pre name="Nizu_NW_Sen" value="True" />
 				<pre name="Nizu_SW_Sen" value="True" />
@@ -1165,10 +1235,10 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			</expressions>
 			<v-notice
 			text="◎ボス取り◎（線は右下から）"
-			icon="Stack.png"
+			icon="3.png"
 			duration="5" />
 		</t>
-		<t no="56" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="ざことる、上側" text="誘導NW" sync-count="3">
+		<t no="56" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="左上、左上、雑魚" text="誘導NW" sync-count="3">
 			<expressions>
 				<pre name="Nizu_SW_Sen" value="True" />
 				<pre name="Nizu_NE_Sen" value="True" />
@@ -1176,10 +1246,10 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			</expressions>
 			<v-notice
 			text="★線は左上から★（雑魚取り）"
-			icon="West.png"
+			icon="1.png"
 			duration="5" />
 		</t>
-		<t no="57" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="ざことる、下側" text="誘導SE" sync-count="3">
+		<t no="57" sync="^14:670A:.*(92.00|107.99),(92.00|107.99)," notice="左下、左下、雑魚" text="誘導SE" sync-count="3">
 			<expressions>
 				<pre name="Nizu_NW_Sen" value="True" />
 				<pre name="Nizu_NE_Sen" value="True" />
@@ -1187,7 +1257,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			</expressions>
 			<v-notice
 			text="★線は左下から★（雑魚取り）"
-			icon="West.png"
+			icon="4.png"
 			duration="5" />
 		</t>
 
@@ -1329,20 +1399,21 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<t sync="^1A:[id8]:[pc] gains the effect of サンダーウィング">
 			<v-notice
 			  text="サンダー➜ ${_pc}"
-			  job-icon="true" 
+			  job-icon="true"
 			  duration="15" />
 		</t>
 
-  @{
-    string[] JobOrder_shikoku = {"WHM", "SCH", "DRK", "PLD", "DRG","NIN","DNC", "RDM"} ; // 並び順
-    int priority_shikoku = 0;
-    foreach (string job in JobOrder_high) {
-      @:<t no="@priority_shikoku" sync="^1A:[id8]:[@job] gains the effect of 死の宣告" sync-count="1" >
-        @:	<v-notice order="@priority_shikoku" duration="5" duration-visible="false" job-icon="true" />
-      @:</t>
-     priority_shikoku++;
-    }
-  }
+		@{
+		string[] JobOrder_shikoku = {"WHM", "SCH", "DRK", "PLD", "DRG","NIN","DNC", "RDM"} ; // 並び順
+		int priority_shikoku = 0;
+		foreach (string job in JobOrder_high) {
+		@:<t no="@priority_shikoku" sync="^1A:[id8]:[@job] gains the effect of 死の宣告" sync-count="1" >
+			@:	<v-notice order="@priority_shikoku" duration="5" duration-visible="false" job-icon="true" />
+			@:
+		</t>
+		priority_shikoku++;
+		}
+		}
 
 		<!--調査中。-->
 		<t sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 220, X4):" notice="範囲対象" >
@@ -1507,12 +1578,12 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 		<t sync="^14:6D26" notice="左安置、近くに誘導" >
 			<v-notice
-			  text="右安置、近くに誘導"
+			  text="左安置、近くに誘導"
 			  duration="10" />
 		</t>
 		<t sync="^14:6D27" notice="左安置、遠くに誘導" >
 			<v-notice
-			  text="右安置、遠くに誘導"
+			  text="左安置、遠くに誘導"
 			  duration="10" />
 		</t>
 	</s>
@@ -1588,6 +1659,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="252" text="騎竜剣モーン・アファー" />
 		<a time="255" text="騎竜剣モーン・アファー" />
 		<a time="258" text="騎竜剣モーン・アファー" />
+		<!--公開向けに一時停止中。
 		<t sync="^14:6D93" notice="内側へ" >
 			<v-notice
 			  text="氷:内側安置"
@@ -1598,5 +1670,6 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			  text="炎:外側安置"
 			  duration="10" />
 		</t>
+-->
 	</s>
 </timeline>
