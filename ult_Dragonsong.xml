@@ -1384,7 +1384,11 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="192" text="Aマイト2" />
 		<a time="194" text="Aマイト1" />
 		<a time="196" text="攻撃" sync="騎神トールダンの「攻撃」" notice="" />
-		<a time="198" text="時間切れ詠唱" sync="騎神トールダンは「エーテルバースト」の構え。" notice="" />
+		<a time="198" text="時間切れ詠唱" sync="騎神トールダンは「エーテルバースト」の構え。" notice="スタンス確認" >
+			<v-notice
+			text="スタンスONになっているか？"
+			duration="7" />
+		</a>
 		<a time="205" text="2%待ち" sync="騎神トールダン:負けを…認めよう… ゆえに、命だけは…頼む…" />
 		<t sync="異邦の詩人:ひとつの命が 歴史の流れを変えてゆく" goto="2竜P1" />
 
@@ -1532,7 +1536,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<!--a time="076" text="アク・モーン" sync="ニーズヘッグは「アク・モーン」の構え。" notice="アク・モーン。" /-->
 		<a time="079" text="カータ確認" sync="フレースヴェルグは「カータライズ」の構え。" >
 			<v-notice
-			  text="ミッショナリー準備/フレースをみる"
+			  text="ミッショナリー準備/フレースみてA、/Cへ"
 			  duration="7" />
 		</a>
 		<a time="085" text="（軽★）アク・モーン4" sync="ニーズヘッグの「アク・モーン」" notice="ミッショ、アク・モーン4連" sync-count="1" />
@@ -1557,8 +1561,12 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="099" text="【ロット予告】" notice="ロット交換、位置確認" />
 		<a time="101" text="AA" />
 		<a time="102" text="ロット2回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、2回目" />
-		<a time="104" text="AA" />
-		<a time="115" text="（軽◎）アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="リプ、リプ、2組頭割り" />
+		<a time="104" text="AA" >
+			<v-notice
+			  text="リプライザル準備"
+			  duration="10" />
+		</a>
+		<a time="115" text="（軽◎）アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="リプ、リプ、リプ、2組頭割り"   notice-o="-9"/>
 
 
 		<!--テイルとウィングの通知はID取れたらトリガにて通知する予定。-->
@@ -1633,6 +1641,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<t no="5" sync="^14:(6D32|6D33|6D34|6D35)" notice="頭割り"  sync-count="2">
 			<v-notice
 			  text="タンク頭割り"
+			icon="TankShare.png"
 			  duration="10" />
 			<expressions>
 				<pre name="w_breath" value="true" />
@@ -1670,7 +1679,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<!--ホーリーウィング判定。ニーズのカータをトリガに判定を開始。-->
 		<t sync="^14:6D23" notice="タンク近く" >
 			<v-notice
-			  text="タンク誘導:近づく"
+			  text="タンク誘導:近づく【フレース＠D】"
 			  duration="10" />
 			<expressions>
 				<set name="holy_wing" value="N" />
@@ -1678,13 +1687,13 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		</t>
 		<t sync="^14:6D24" notice="タンク遠く" >
 			<v-notice
-			  text="タンク誘導:離れる"
+			  text="タンク誘導:離れる【フレース＠D】"
 			  duration="10" />
 			<expressions>
 				<set name="holy_wing" value="N" />
 			</expressions>
 		</t>
-		<t sync="^14:6D26" notice="タンク近く" >
+		<t sync="^14:6D26" notice="タンク近く【フレース＠D】" >
 			<v-notice
 			  text="タンク誘導:近づく"
 			  duration="10" />
@@ -1692,9 +1701,9 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 				<set name="holy_wing" value="S" />
 			</expressions>
 		</t>
-		<t sync="^14:6D27" notice="ランク遠く" >
+		<t sync="^14:6D27" notice="タンク遠く" >
 			<v-notice
-			  text="タンク誘導:離れる"
+			  text="タンク誘導:離れる【フレース＠D】"
 			  duration="10" />
 			<expressions>
 				<set name="holy_wing" value="S" />
@@ -1769,8 +1778,9 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 			  text="テイル:外側安置"
 			  duration="10" />
 		</t>
-		<t sync="^1A:[id8]:[me] gains the effect of 滅殺の誓い" notice="ロットついたよ" />
-		<t sync="^1A:[id8]:[pc] gains the effect of 滅殺の誓い" >
+
+		<t sync="^1A:[id8]:[mex] gains the effect of 滅殺の誓い" notice="ロットついたよ" />
+		<t sync="^1A:[id8]:[pc] gains the effect of 滅殺の誓い" text="ロット確認" >
 			<v-notice
 			  job-icon="true"
 			  text="滅殺の誓い ➜${_pc}"
@@ -1809,14 +1819,14 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="068" text="アク・モーン1" />
 		<a time="074" text="【D1】トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
 		<a time="078" text="【D2】トリニティ" />
-		<a time="090" text="ギガフレア" sync="騎竜神トールダンの「騎竜剣ギガフレア」" notice="ギガフレア。挑発。"  >
+		<a time="090" text="ギガフレア" sync="騎竜神トールダンの「騎竜剣ギガフレア」" notice="ギガフレア。挑発用意"  >
 			<v-notice
 			  text="MT中....→フレア終わったらAへ"
 			icon="MT.png"
 			  duration="25" />
 		</a>
 		<a time="090" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-		<a time="108" text="【D3】トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+		<a time="108" text="【D3】トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1"  icon="Buff.png"  />
 		<a time="112" text="【D4】トリニティ" />
 
 		<!--エクサ2回目-->
@@ -1829,7 +1839,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="121" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
 		<a time="129" text="【H1】トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
 		<a time="133" text="【H2】トリニティ" />
-		<a time="135" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" notice="挑発" >
+		<a time="135" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" notice="挑発用意" >
 			<v-notice
 			  text="MT中....→アクモーン終わったら反対へ"
 			icon="MT.png"
@@ -1855,7 +1865,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="192" text="【D4】トリニティ" />
 
 		<!--エクサ3回目-->
-		<a time="194" text="【予兆】エクサフレア" sync="騎竜神トールダンは「騎竜剣エクサフレア」の構え。"  notice="挑発">
+		<a time="194" text="【予兆】エクサフレア" sync="騎竜神トールダンは「騎竜剣エクサフレア」の構え。"  notice="挑発用意">
 			<v-notice
 			  text="MT中....→左回りでAA受ける位置"
 			icon="MT.png"
@@ -1867,7 +1877,7 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="213" text="【H2】トリニティ" />
 		<a time="215" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" >
 			<v-notice
-			  text="ST中....→アクモーン終わったら反対へ/D1,D2"
+			  text="ST中....→アクモーン終わったら反対へ"
 			  duration="25" />
 		</a>
 		<a time="222" text="（軽◎★）アク・モーン7" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="リプ、ミッショ、アク・モーン。"  />
@@ -1878,22 +1888,24 @@ var job_order      = new string[] { "[DRK]", "[PLD]", "[WHM]", "[SCH]", "[DRG]",
 		<a time="227" text="アク・モーン3" />
 		<a time="228" text="アク・モーン2" />
 		<a time="229" text="アク・モーン1" />
-		<a time="235" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
-		<a time="239" text="トリニティ" />
+		<a time="235" text="【D1】トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" icon="Potion.png" />
+		<a time="239" text="【D2】トリニティ" />
 		<!--a time="241" sync="騎竜神トールダン:そろそろ終いだ……！ すべての眼よ、永遠の死をここに……！" /-->
 		<a time="241" text="最終詠唱" sync="騎竜神トールダンは「騎竜剣モーン・アファー」の構え。" notice="" />
 		<a time="252" text="騎竜剣モーン・アファー" />
 		<a time="255" text="騎竜剣モーン・アファー" />
 		<a time="258" text="騎竜剣モーン・アファー" />
 
-		<t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12A" notice="外側へ" >
+		<t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12A" notice="外側、外側へ" >
 			<v-notice
 			  text="炎:外側安置"
-			  duration="10" />
+				icon="AOEInside.png"
+				  duration="10" />
 		</t>
-		<t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12B" notice="内側へ" >
+		<t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12B" notice="内側、内側へ" >
 			<v-notice
 			  text="氷:内側安置"
+			icon="AOEOutside.png"
 			  duration="10" />
 		</t>
 	</s>
