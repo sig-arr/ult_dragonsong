@@ -159,10 +159,10 @@
 	</t>
 
 	<t sync="^1A:CF7:.*?:[mex]:" notice="爪を受ける" >
-		<v-notice text="爪を受ける" duration="16" />
+		<v-notice text="爪を受ける＠西側【数字】" duration="16" />
 	</t>
 	<t sync="^1A:CF8:.*?:[mex]:" notice="蛇を受ける" >
-		<v-notice text="蛇を受ける" duration="16" />
+		<v-notice text="蛇を受ける＠東側【英字】" duration="16" />
 	</t>
 
 	<!--マーカーセット。最初の頭割りを基準にし、他マーカーを逆算するよう試作。-->
