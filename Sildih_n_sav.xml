@@ -77,7 +77,7 @@
   </t>
 
 <!--まだ未チェック＠輪っか？-->
-  <t sync="^14:77F" notice="　" >
+  <t sync="^14:779F" notice="　" >
     <v-notice text="チャージ1" duration="8" />
   </t>
   <t sync="^14:77A0" notice="　" >
