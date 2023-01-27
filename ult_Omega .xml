@@ -116,22 +116,22 @@
 		<!--プレステ-->
 		<t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
 			<v-notice
-			  text="○マーカー"
+			  text="○マーカー[１]"
 			  duration="30" />
 		</t>
 		<t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
 			<v-notice
-			  text="△マーカー"
+			  text="△マーカー[３]"
 			  duration="30" />
 		</t>
 		<t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
 			<v-notice
-			  text="□マーカー"
+			  text="□マーカー[４]"
 			  duration="30" />
 		</t>
 		<t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
 			<v-notice
-			  text="×マーカー"
+			  text="×マーカー[２]"
 			  duration="30" />
 		</t>
 
