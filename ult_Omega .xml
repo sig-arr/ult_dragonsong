@@ -159,56 +159,56 @@
 		</t>
 		<!--詠唱時間短すぎどうなってるねん-->
 
-		<t sync="^14:(7B25|7B26)" notice="よん" text="行き先判定fa1" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="よん" text="行き先判定fa1" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_fa" value="true" />
 				<pre name="P2_shikaku" value="true" />
 			</expressions>
 			<v-notice text="左　４" duration="8" icon="4.png"/>
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="さん" text="行き先判定fa2" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="さん" text="行き先判定fa2" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_fa" value="true" />
 				<pre name="P2_sankaku" value="true" />
 			</expressions>
 			<v-notice text="左　３" duration="8" icon="3.png" />
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="にー" text="行き先判定fa3" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="にー" text="行き先判定fa3" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_fa" value="true" />
 				<pre name="P2_batu" value="true" />
 				<v-notice text="左　２" duration="8" icon="2.png" />
 			</expressions>
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="いち" text="行き先判定fa4" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="いち" text="行き先判定fa4" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_fa" value="true" />
 				<pre name="P2_maru" value="true" />
 				<v-notice text="左　１" duration="8" icon="1.png" />
 			</expressions>
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="よん" text="行き先判定mid1" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="よん" text="行き先判定mid1" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_middle" value="true" />
 				<pre name="P2_shikaku" value="true" />
 			</expressions>
 			<v-notice text="左　４" duration="8" icon="4.png" />
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="さん" text="行き先判定mid2" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="さん" text="行き先判定mid2" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_middle" value="true" />
 				<pre name="P2_sankaku" value="true" />
 			</expressions>
 			<v-notice text="左　３" duration="8" icon="3.png" />
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="にー" text="行き先判定mid3" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="にー" text="行き先判定mid3" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_middle" value="true" />
 				<pre name="P2_batu" value="true" />
 			</expressions>
 			<v-notice text="左　２" duration="8" icon="2.png" />
 		</t>
-		<t sync="^14:(7B25|7B26)" notice="いち" text="行き先判定mid4" notice-o="1.5" sync-count="1">
+		<t sync="^14:(7B2A|7B2D)" notice="いち" text="行き先判定mid4" notice-o="1.5" sync-count="1">
 			<expressions>
 				<pre name="P2_middle" value="true" />
 				<pre name="P2_maru" value="true" />
@@ -273,10 +273,10 @@
 		</t>
 
 		<t sync="^14:(7B34|7B35):.*?(115.56,84.44,|84.44,115.56,)" text="ブレードオプション１" sync-count="1">
-			<v-notice text="【１】線は１" duration="10" />
+			<v-notice text="【１】線は１" duration="10"/>
 		</t>
 		<t sync="^14:(7B34|7B35):.*?(115.56,115.56,|84.44,84.44,)" text="ブレードオプション２" sync-count="1">
-			<v-notice text="【２】線は２" duration="10" />
+			<v-notice text="【２】線は２" duration="10"/>
 		</t>
 
 	</s>
@@ -311,13 +311,13 @@
 			<expressions>
 				<pre name="red_circle" value="true"/>
 			</expressions>
-			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" />
+			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
 		</t>
 		<t text="M1B" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
 			<expressions>
 				<pre name="blue_circle" value="true"/>
 			</expressions>
-			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" />
+			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
 		</t>
 		<a time="050" text="シェア受ける" notice="シェア受ける" />
 		<!--<a time="050" text="シェア受ける" notice="シェア受ける" >
@@ -328,9 +328,22 @@
 		<a time="067" text="エンバグ処理2" />
 		<!--act2-->
 		<a time="070" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="071" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+		<t text="M2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="M2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="071" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" />
+		<!--		<a time="071" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
 			<v-notice text="床踏み+シェア渡す" duration="19" />
-		</a>
+		</a>-->
 		<a time="080" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
 		<a time="085" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
 		<a time="088" text="担当外エンバグ2" />
@@ -340,13 +353,13 @@
 			<expressions>
 				<pre name="red_circle" value="true"/>
 			</expressions>
-			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" />
+			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
 		</t>
 		<t text="M3B" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
 			<expressions>
 				<pre name="blue_circle" value="true"/>
 			</expressions>
-			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" />
+			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
 		</t>
 		<a time="092" text="サークル受ける" notice="サークル受ける"  />
 		<!--	<a time="092" text="サークル受ける" notice="サークル受ける" >
@@ -357,9 +370,22 @@
 		<a time="109" text="エンバグ処理2" />
 		<!--act4-->
 		<a time="112" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="113" text="サークル１人受け" notice="サークル１人受け" >
+		<t text="M4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentRed.png" />
+		</t>
+		<t text="M4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentGlory.png"  />
+		</t>
+		<a time="113" text="サークル１人受け" notice="サークル１人受け"  />
+		<!--		<a time="113" text="サークル１人受け" notice="サークル１人受け" >
 			<v-notice text="床踏み+サークルソロ受け" duration="19" />
-		</a>
+		</a>-->
 		<a time="123" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
 		<a time="122" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
 		<a time="128" text="担当外エンバグ2" />
@@ -393,244 +419,6 @@
 		<t sync="^1A:[id8]:[mex] gains the effect of 狙撃式波動砲"  text="狙撃式2">
 			<v-notice text="単体対象" duration="19" />
 		</t>
-	</s>
-	<!--シェア用タイムライン-->
-	<s name="P3-S">
-		<!--act1-->
-		<a time="012" text="シェア用タイムライン" >
-			<expressions>
-				<set name="P3-HW" value="false" />
-			</expressions>
-		</a>
-		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="015" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
-			<v-notice text="床踏み+シェア渡す" duration="19" />
-		</a>
-		<a time="025" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="032" text="担当外エンバグ2" />
-		<!--act2-->
-		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="S2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" />
-		</t>
-		<t text="S2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" />
-		</t>
-		<a time="036" text="サークル受ける" notice="サークル受ける"  />
-		<!--			<a time="036" text="サークル受ける" notice="サークル受ける" >
-			<v-notice text="【ニア】サークル受ける,エンバグ担当" duration="19" />
-		</a>-->
-		<a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="053" text="エンバグ処理2" />
-		<!--act3-->
-		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="057" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
-			<v-notice text="床踏み+サークル渡す" duration="19" />
-		</a>
-		<a time="067" text="サークル発動" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="074" text="担当外エンバグ" />
-		<!--act4-->
-		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="S4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<t text="S4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<a time="078" text="シェア受ける" notice="シェア受ける" />
-		<!--<a time="078" text="シェア受ける" notice="シェア受ける" >
-			<v-notice text="床踏み+シェア受ける,エンバグ担当" duration="19" />
-		</a>-->
-		<a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="093" text="エンバグ処理" />
-		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
-	</s>
-
-	<!--サークル用タイムライン-->
-	<s name="P3-C">
-		<!--act1-->
-		<a time="012" text="サークル用タイムライン" >
-			<expressions>
-				<set name="P3-HW" value="false" />
-			</expressions>
-		</a>
-		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="015" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
-			<v-notice text="床踏み+サークル渡す" duration="19" />
-		</a>
-		<a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="032" text="担当外エンバグ2" />
-		<!--act2-->
-		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="C2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<t text="C2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<a time="036" text="シェア受ける" notice="シェア受ける" />
-		<!--		<a time="036" text="シェア受ける" notice="シェア受ける" >
-			<v-notice text="【ファー】シェア受ける,エンバグ担当" duration="19" />
-		</a>-->
-		<a time="045" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="053" text="エンバグ処理2" />
-		<!--act3-->
-		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="057" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
-			<v-notice text="床踏み+シェア渡す" duration="19" />
-		</a>
-		<a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="074" text="担当外エンバグ" />
-		<!--act4-->
-		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="C4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニア・青側へ】サークル避ける" duration="19" />
-		</t>
-		<t text="C4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニア・赤側へ】サークル避ける" duration="19" />
-		</t>
-		<a time="078" text="【位置注意】サークル避ける" notice="サークル避ける" />
-		<!--
-		<a time="078" text="サークル避ける" notice="サークル避ける" >
-			<v-notice text="【位置注意】サークル避ける,エンバグ担当" duration="19" />
-		</a>-->
-		<a time="088" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="093" text="エンバグ処理" />
-		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
-	</s>
-
-	<s name="P3-L">
-		<!--レイテント用タイムライン-->
-		<!--act1-->
-		<a time="012" text="レイテント用タイムライン" >
-			<expressions>
-				<set name="P3-HW" value="false" />
-			</expressions>
-		</a>
-		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="R1R" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" />
-		</t>
-		<t text="R1B" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" />
-		</t>
-		<a time="015" text="サークル受ける" notice="サークル受ける" />
-		<!--		<a time="015" text="サークル受ける" notice="サークル受ける" >
-			<v-notice text="【ニア】サークル受ける,エンバグ担当" duration="19" />
-		</a>-->
-		<a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="029" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="032" text="エンバグ処理2" />
-		<!--act2-->
-		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="036" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
-			<v-notice text="床踏み+サークル渡す" duration="19" />
-		</a>
-		<a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-		<a time="050" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="053" text="担当外エンバグ2" />
-		<!--act3-->
-		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-		<t text="R3R" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
-			<expressions>
-				<pre name="red_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<t text="R3B" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
-			<expressions>
-				<pre name="blue_circle" value="true"/>
-			</expressions>
-			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" />
-		</t>
-		<a time="057" text="シェア受ける" notice="シェア受ける" />
-		<!--		<a time="057" text="シェア受ける" notice="シェア受ける" >
-			<v-notice text="【ファー】シェア受ける,エンバグ担当" duration="19" />
-		</a>>-->
-		<a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="071" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="074" text="エンバグ処理2" />
-		<!--act4-->
-		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-		<a time="078" text="シェア渡す" notice="シェア渡す" >
-			<v-notice text="床踏み+シェア渡す" duration="19" />
-		</a>
-		<a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-		<a time="087" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-		<a time="093" text="担当外エンバグ2" />
-		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
-	</s>
-
-
-	<s name="P3-2">
-		<a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" />
-		<a time="021" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="デバフ確認" />
-		<a time="031" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
-		<a time="037" text="時間切れ開始" sync="オメガは「イオンエフラクス」の構え。" notice="時間切れ開始" />
-		<a time="046" text="時間切れ" sync="オメガの「イオンエフラクス」" />
-		<t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
-	</s>
-
-	<s name="P4">
-		<a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
-		<a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
-		<a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notie="頭割り" sync-s="-3" sync-e="3" />
-		<a time="023" text="外に出る" otice="そとにでる" notice-o="0" />
-		<a time="025" text="内に入る" otice="うちはいる" notice-o="0" />
-		<a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
-		<a time="027" text="1床" />
-		<a time="029" text="2床" />
-		<a time="031" text="【頭割】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
-		<!--a time="035" sync="オメガ:ガガガ……ハードウェア、耐久限界を超越…… そうだとしても……強く……もっと強く……！" /-->
-		<a time="036" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
-		<a time="038" text="外に出る" notice="そとにでる" notice-o="0" />
-		<a time="041" text="3床" />
-		<a time="041" text="【頭割り】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
-		<a time="043" text="内入る" notice="うちはいる" notice-o="0" />
-		<a time="045" text="4床" />
-		<a time="047" text="5床" />
-		<!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
-		<a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
-		<a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
-
 
 		@{
 		for(int i=0;i<8;i++){
@@ -671,6 +459,362 @@
 		</t>
 		}
 		}
+
+		@{
+		for(int i=0;i<8;i++){
+			<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_Degrade" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="red_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="赤サー・青シェア" duration="40"/>
+		</t>
+		<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_performance" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="blue_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="青サー・赤シェア・" duration="40"/>
+		</t>
+		}
+		}
+	</s>
+	<!--シェア用タイムライン-->
+	<s name="P3-S">
+		<!--act1-->
+		<a time="012" text="シェア用タイムライン" >
+			<expressions>
+				<set name="P3-HW" value="false" />
+			</expressions>
+		</a>
+		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="S1R" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="S1B" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="015" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" />
+		<!--		<a time="015" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+			<v-notice text="床踏み+シェア渡す" duration="19" />
+		</a>-->
+		<a time="025" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="032" text="担当外エンバグ2" />
+		<!--act2-->
+		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="S2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<t text="S2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<a time="036" text="サークル受ける" notice="サークル受ける"  />
+		<!--			<a time="036" text="サークル受ける" notice="サークル受ける" >
+			<v-notice text="【ニア】サークル受ける,エンバグ担当" duration="19" />
+		</a>-->
+		<a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="053" text="エンバグ処理2" />
+		<!--act3-->
+		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="M3R" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<t text="M3B" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<a time="057" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" />
+		<!--		<a time="057" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+			<v-notice text="床踏み+サークル渡す" duration="19" />
+		</a>-->
+		<a time="067" text="サークル発動" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="074" text="担当外エンバグ" />
+		<!--act4-->
+		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="S4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="S4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="078" text="シェア受ける" notice="シェア受ける" />
+		<!--<a time="078" text="シェア受ける" notice="シェア受ける" >
+			<v-notice text="床踏み+シェア受ける,エンバグ担当" duration="19" />
+		</a>-->
+		<a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="093" text="エンバグ処理" />
+		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+
+		@{
+		for(int i=0;i<8;i++){
+			<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_Degrade" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="red_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="赤サー・青シェア" duration="40"/>
+		</t>
+		<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_performance" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="blue_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="青サー・赤シェア・" duration="40"/>
+		</t>
+		}
+		}
+	</s>
+
+	<!--サークル用タイムライン-->
+	<s name="P3-C">
+		<!--act1-->
+		<a time="012" text="サークル用タイムライン" >
+			<expressions>
+				<set name="P3-HW" value="false" />
+			</expressions>
+		</a>
+		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="C1R" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<t text="C1B" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<a time="015" text="床踏み+サークル渡す" notice="床踏みとサークル渡す"  />
+		<!--		<a time="015" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+			<v-notice text="床踏み+サークル渡す" duration="19" />
+		</a>-->
+		<a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="032" text="担当外エンバグ2" />
+		<!--act2-->
+		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="C2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="C2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="036" text="シェア受ける" notice="シェア受ける" />
+		<!--		<a time="036" text="シェア受ける" notice="シェア受ける" >
+			<v-notice text="【ファー】シェア受ける,エンバグ担当" duration="19" />
+		</a>-->
+		<a time="045" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="053" text="エンバグ処理2" />
+		<!--act3-->
+		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="C3R" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="C3B" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="057" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" />
+		<!--		<a time="057" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+			<v-notice text="床踏み+シェア渡す" duration="19" />
+		</a>-->
+		<a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="074" text="担当外エンバグ" />
+		<!--act4-->
+		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="C4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニア・青側へ】サークル避ける" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="C4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニア・赤側へ】サークル避ける" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="078" text="【位置注意】サークル避ける" notice="サークル避ける" />
+		<!--
+		<a time="078" text="サークル避ける" notice="サークル避ける" >
+			<v-notice text="【位置注意】サークル避ける,エンバグ担当" duration="19" />
+		</a>-->
+		<a time="088" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="093" text="エンバグ処理" />
+		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+		@{
+		for(int i=0;i<8;i++){
+			<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_Degrade" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="red_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="赤サー・青シェア" duration="40"/>
+		</t>
+		<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
+			<expressions>
+				<pre name="@(Model.Party[i].Job)_Ciecle" value="1"/>
+				<pre name="@(Model.Party[i].Job)_performance" value="1"/>
+				<pre name="circle_priv" value="false"/>
+				<set name="blue_circle" value="true"/>
+				<set name="circle_priv" value="true"/>
+			</expressions>
+			<v-notice text="青サー・赤シェア" duration="40"/>
+		</t>
+		}
+		}
+	</s>
+
+	<s name="P3-L">
+		<!--レイテント用タイムライン-->
+		<!--act1-->
+		<a time="012" text="レイテント用タイムライン" >
+			<expressions>
+				<set name="P3-HW" value="false" />
+			</expressions>
+		</a>
+		<a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="R1R" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニアー・赤】サークル受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<t text="R1B" sync="オメガは「レイテントバグ」の構え。" sync-count="1">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ニアー・青】サークル受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<a time="015" text="サークル受ける" notice="サークル受ける" />
+		<!--		<a time="015" text="サークル受ける" notice="サークル受ける" >
+			<v-notice text="【ニア】サークル受ける,エンバグ担当" duration="19" />
+		</a>-->
+		<a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="029" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="032" text="エンバグ処理2" />
+		<!--act2-->
+		<a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="R2R" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<t text="R2B" sync="オメガは「レイテントバグ」の構え。" sync-count="2">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青サー】床踏み+サークルソロ受け" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<a time="036" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" />
+		<!--		<a time="036" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+			<v-notice text="床踏み+サークル渡す" duration="19" />
+		</a>-->
+		<a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+		<a time="050" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="053" text="担当外エンバグ2" />
+		<!--act3-->
+		<a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="R3R" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・青】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="R3B" sync="オメガは「レイテントバグ」の構え。" sync-count="3">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【ファー・赤】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="057" text="シェア受ける" notice="シェア受ける" />
+		<!--		<a time="057" text="シェア受ける" notice="シェア受ける" >
+			<v-notice text="【ファー】シェア受ける,エンバグ担当" duration="19" />
+		</a>>-->
+		<a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="071" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="074" text="エンバグ処理2" />
+		<!--act4-->
+		<a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+		<t text="R4R" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="red_circle" value="true"/>
+			</expressions>
+			<v-notice text="【青シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentGlory.png"/>
+		</t>
+		<t text="R4B" sync="オメガは「レイテントバグ」の構え。" sync-count="4">
+			<expressions>
+				<pre name="blue_circle" value="true"/>
+			</expressions>
+			<v-notice text="【赤シェア】シェア受ける,エンバグ担当" duration="19" icon="PunishmentRed.png"/>
+		</t>
+		<a time="078" text="シェア渡す" notice="シェア渡す" />
+		<!--		<a time="078" text="シェア渡す" notice="シェア渡す" >
+			<v-notice text="床踏み+シェア渡す" duration="19" />
+		</a>-->
+		<a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+		<a time="087" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+		<a time="093" text="担当外エンバグ2" />
+		<t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
 		@{
 		for(int i=0;i<8;i++){
 			<t sync="^1E:[0-9A-F]{8}:@(Model.Party[i].Name) loses the effect of コードスメール：サークル from">
@@ -695,6 +839,42 @@
 		</t>
 		}
 		}
+	</s>
+
+
+	<s name="P3-2">
+		<a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" />
+		<a time="021" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="デバフ確認" />
+		<a time="031" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+		<a time="037" text="時間切れ開始" sync="オメガは「イオンエフラクス」の構え。" notice="時間切れ開始" />
+		<a time="046" text="時間切れ" sync="オメガの「イオンエフラクス」" />
+		<t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
+	</s>
+
+	<s name="P4">
+		<a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
+		<a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+		<a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notie="頭割り" sync-s="-3" sync-e="3" />
+		<a time="023" text="外に出る" otice="そとにでる" notice-o="0" />
+		<a time="025" text="内に入る" otice="うちはいる" notice-o="0" />
+		<a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+		<a time="027" text="1床" />
+		<a time="029" text="2床" />
+		<a time="031" text="【頭割】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
+		<!--a time="035" sync="オメガ:ガガガ……ハードウェア、耐久限界を超越…… そうだとしても……強く……もっと強く……！" /-->
+		<a time="036" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+		<a time="038" text="外に出る" notice="そとにでる" notice-o="0" />
+		<a time="041" text="3床" />
+		<a time="041" text="【頭割り】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
+		<a time="043" text="内入る" notice="うちはいる" notice-o="0" />
+		<a time="045" text="4床" />
+		<a time="047" text="5床" />
+		<!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
+		<a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
+		<a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
+
+
+
 
 	</s>
 
@@ -702,7 +882,8 @@
 	<t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
 		<v-notice
 		  text="○マーカー"
-		  duration="30" />
+		  duration="30"
+		  icon="PS_maru.png"/>
 		<expressions>
 			<set name="P2_maru" value="true" />
 		</expressions>
@@ -710,7 +891,8 @@
 	<t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
 		<v-notice
 		  text="△マーカー"
-		  duration="30" />
+		  duration="30"
+		  icon="PS_sankaku.png" />
 		<expressions>
 			<set name="P2_sankaku" value="true" />
 		</expressions>
@@ -718,7 +900,8 @@
 	<t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
 		<v-notice
 		  text="□マーカー"
-		  duration="30" />
+		  duration="30"
+		  icon="PS_shikaku.png" />
 		<expressions>
 			<set name="P2_shikaku" value="true" />
 		</expressions>
@@ -726,9 +909,12 @@
 	<t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
 		<v-notice
 		  text="×マーカー"
-		  duration="30" />
+		  duration="30"
+		  icon="PS_batu.png" />
 		<expressions>
 			<set name="P2_batu" value="true" />
 		</expressions>
 	</t>
+
+
 </timeline>
