@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶オメガ</name>
-	<rev>TEST8</rev>
+	<rev>TEST11</rev>
 	<description>
-		20220131:TEST5 P3作成動作、未確認
 		20220203:TEST6 ブルスクまで。エラー情報を収集しています。0%完了
 		20220204:TEST7 動作調整
-		202202050133:TEST8 波動砲連打部分の修正
+		202202050133:TEST8 波動砲連打部分の修正 8.1記述ミス修正
+		202202090029:TEST9EX 検知式波動砲の試作
+		202202120049:TEST11 P5入りまで。検知に大幅トリガ追加
 		注意:作成途中の為、予期しない動作をすることがあります。
 		AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
 	</description>
@@ -108,10 +109,10 @@
 			  duration="8" />
 		</t>
 		<!--グリッチの通知-->
-		<t sync="^1A:[id8]:[mex] gains the effect of _rsv_3427" notice="ミドル" >
+		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
 			<v-notice text="グリッチ：ミドル" duration="30" />
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of _rsv_3428" notice="ファー" >
+		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
 			<v-notice text="グリッチ：ファー" duration="30" />
 		</t>
 		<!--詠唱時間短すぎどうなってるねん-->
@@ -381,20 +382,60 @@
 
 
 	<s name="P3-2">
-		<a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" />
+		<!--検知式波動砲のフラグを初期化-->
+		<a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" >
+			<expressions>
+				<set name="P3SW" value="false" />
+			</expressions>
+		</a>
 		<a time="021" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="デバフ確認" />
 		<a time="031" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
 		<a time="037" text="時間切れ開始" sync="オメガは「イオンエフラクス」の構え。" notice="時間切れ開始" />
 		<a time="046" text="時間切れ" sync="オメガの「イオンエフラクス」" />
 		<t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
+
+		<!--検知対象の場合、フラグをセット-->
+		<t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" >
+			<expressions>
+				<set name="P3SW" value="true" />
+			</expressions>
+		</t>
+
+		<!--検知対象なら行き先を通知する-->
+		<t sync="^14:7B6B" notice="検知対象、左側へ" >
+			<v-notice text="左側へ検知対象" duration="10" />
+			<expressions>
+				<pre name="P3SW" value="true" />
+			</expressions>
+		</t>
+		<t sync="^14:7B6C" notice="検知対象、右側へ" >
+			<v-notice text="右側へ検知対象" duration="10" />
+			<expressions>
+				<pre name="P3SW" value="true" />
+			</expressions>
+		</t>
+
+		<!--検知対象外ならボスの手の向きを通知-->
+		<t sync="^14:7B6B" notice="ボス右手検知" >
+			<v-notice text="ボス右手検知" duration="10" />
+			<expressions>
+				<pre name="P3SW" value="false" />
+			</expressions>
+		</t>
+		<t sync="^14:7B6C" notice="ボス左手検知" >
+			<v-notice text="ボス左手検知" duration="10" />
+			<expressions>
+				<pre name="P3SW" value="false" />
+			</expressions>
+		</t>
 	</s>
 
 	<s name="P4">
 		<a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
 		<a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
 		<a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notie="頭割り" sync-s="-3" sync-e="3" />
-		<a time="023" text="外に出る" otice="そとにでる" notice-o="0" />
-		<a time="025" text="内に入る" otice="うちはいる" notice-o="0" />
+		<a time="023" text="外に出る" notice="そとにでる" notice-o="0" />
+		<a time="025" text="内に入る" notice="うちはいる" notice-o="0" />
 		<a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
 		<a time="027" text="1床" />
 		<a time="029" text="2床" />
@@ -410,28 +451,50 @@
 		<!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
 		<a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
 		<a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
+		<t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5" />
 	</s>
 
+	<s name="P5">
+		<a time="010" text="同期待ち" sync="オメガMは「ソーラレイ」の構え。" />
+		<a time="015" text="タンク強攻撃1" sync="オメガMの「ソーラレイ」" notice="タンク攻撃" sync-interval="5" />
+		<a time="018" text="タンク強攻撃2" sync="オメガMの「ソーラレイ」" />
+		<a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ" />
+		<a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
+		<a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
+		<a time="055" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知確認" />
+		<a time="055" text="オプチカルレーザーF" />
+		<a time="060" text="シールドコンボS" />
+		<a time="065" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+
+		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニアー" >
+			<v-notice text="ニア対象。検知誘導に注意" duration="60" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー" >
+			<v-notice text="ファー対象。頭割りに注意" duration="60" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" >
+			<v-notice text="ハロワ：ニア対象" duration="60" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" >
+			<v-notice text="ハロワ：ファー対象" duration="60" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
+			<v-notice text="検知対象" duration="20" />
+		</t>
+
+	</s>
 
 	<!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
 	<t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
-		<v-notice
-		  text="○マーカー"
-		  duration="30" />
+		<v-notice text="○マーカー" duration="30" />
 	</t>
 	<t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
-		<v-notice
-		  text="△マーカー"
-		  duration="30" />
+		<v-notice text="△マーカー" duration="30" />
 	</t>
 	<t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
-		<v-notice
-		  text="□マーカー"
-		  duration="30" />
+		<v-notice text="□マーカー" duration="30" />
 	</t>
 	<t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
-		<v-notice
-		  text="×マーカー"
-		  duration="30" />
+		<v-notice text="×マーカー" duration="30" />
 	</t>
 </timeline>
