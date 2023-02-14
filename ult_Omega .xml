@@ -911,36 +911,50 @@
 		<!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
 		<a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
 		<a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
-		<t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5" />
+		<t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5D" />
 	</s>
 
-	<s name="P5">
+	<s name="P5D">
 		<a time="010" text="同期待ち" sync="オメガMは「ソーラレイ」の構え。" />
-		<a time="015" text="タンク強攻撃1" sync="オメガMの「ソーラレイ」" notice="タンク攻撃" sync-interval="5" />
-		<a time="018" text="タンク強攻撃2" sync="オメガMの「ソーラレイ」" />
+		<a time="015" text="タンク強攻撃1" notice="タンク攻撃" />
+		<a time="018" text="タンク強攻撃2" />
 		<a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ" />
 		<a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
 		<a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
+		<a time="052" text="エンバグ開始" />
 		<a time="055" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知確認" />
 		<a time="055" text="オプチカルレーザーF" />
-		<a time="060" text="シールドコンボS" />
-		<a time="065" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+		<a time="061" text="シールドコンボS" sync="オメガMの「シールドコンボS」" />
+		<a time="063" text="腕パルス開始" sync="レフトアームユニットの「ハイパーパルス」" sync-count="1" />
+		<a time="065" text="検知式+頭割り" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
+		<!--a time="066.0" text="パイルピッチ" sync="オメガMの「パイルピッチ」" notice="次は、パイルピッチ。" /-->
+		<a time="068" text="【構え】旋回式波動砲" sync="オメガは「旋回式波動砲」の構え。" />
+		<a time="078" text="旋回式波動砲" sync="オメガの「旋回式波動砲」" notice="旋回式波動砲。" />
+		<a time="092" sync="オメガMは「ソーラレイ」の構え。" />
+		<a time="097" text="ソーラレイ" notice="タンク攻撃" />
+		<a time="101" text="ソーラレイ" />
+		<t sync="オメガM:この力の増幅は、リミッターカットでは説明不能" goto="P5S" />
 
-		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニアー" >
-			<v-notice text="ニア対象。検知誘導に注意" duration="60" />
+		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" >
+			<v-notice text="ニア対象。検知誘導" duration="45" />
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー" >
-			<v-notice text="ファー対象。頭割りに注意" duration="60" />
+			<v-notice text="ファー対象。シールド誘導+頭割り" duration="45" />
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" >
-			<v-notice text="ハロワ：ニア対象" duration="60" />
+			<v-notice text="ハロワ：ニア対象" duration="45" />
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" >
-			<v-notice text="ハロワ：ファー対象" duration="60" />
+			<v-notice text="ハロワ：ファー対象" duration="45" />
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
-			<v-notice text="検知対象" duration="20" />
+			<v-notice text="検知対象　頭割り注意" duration="11" />
 		</t>
+	</s>
+
+	<s name="P5S">
+		<a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
+		<a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" />
 
 	</s>
 
