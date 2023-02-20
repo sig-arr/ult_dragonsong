@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶オメガ</name>
-	<rev>TEST12</rev>
+	<rev>TEST15</rev>
 	<description>
-		20220203:TEST6 ブルスクまで。エラー情報を収集しています。0%完了
-		20220204:TEST7 動作調整
-		202202050133:TEST8 波動砲連打部分の修正 8.1記述ミス修正
-		202202090029:TEST9EX 検知式波動砲の試作
-		202202120049:TEST11 P5入りまで。検知に大幅トリガ追加
-		202202130113:TEST12 P5デルタを作成。動作未チェック
+		202302120049:TEST11 P5入りまで。検知に大幅トリガ追加
+		202302130113:TEST12 P5デルタを作成。動作未チェック
+		202302181826:TEST13EX P5シグマ試作
+		202302190136:TEST15 P5とりあえず全部。
 		注意:作成途中の為、予期しない動作をすることがあります。
-		AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
+		AquaCatのブログをよろしくお願いします。(https://www.aquacat.woEXrk/)
 	</description>
 	<author>Aqua Cat,RINGS</author>
 	<license>CC BY-SA</license>
@@ -471,32 +469,109 @@
 		<!--a time="066.0" text="パイルピッチ" sync="オメガMの「パイルピッチ」" notice="次は、パイルピッチ。" /-->
 		<a time="068" text="【構え】旋回式波動砲" sync="オメガは「旋回式波動砲」の構え。" />
 		<a time="078" text="旋回式波動砲" sync="オメガの「旋回式波動砲」" notice="旋回式波動砲。" />
+		<a time="080" text="着弾確認" notice="着弾見てから" notice-o="0" />
 		<a time="092" sync="オメガMは「ソーラレイ」の構え。" />
 		<a time="097" text="ソーラレイ" notice="タンク攻撃" />
 		<a time="101" text="ソーラレイ" />
 		<t sync="オメガM:この力の増幅は、リミッターカットでは説明不能" goto="P5S" />
 
-		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" >
-			<v-notice text="ニア対象。検知誘導" duration="45" />
+		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" notice="ニア対象" >
+			<v-notice text="ニア対象。検知誘導" duration="20" />
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー" >
-			<v-notice text="ファー対象。シールド誘導+頭割り" duration="45" />
+		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー " notice="ファー対象" >
+			<v-notice text="ファー対象。シールド誘導+頭割り" duration="20" />
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" >
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="2" >
 			<v-notice text="ハロワ：ニア対象" duration="45" />
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" >
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="2" >
 			<v-notice text="ハロワ：ファー対象" duration="45" />
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
 			<v-notice text="検知対象　頭割り注意" duration="11" />
+		</t>
+		<!--通知が多すぎるのでオミット
+    <t sync="^14:7B96:" notice="ボス右手検知" >
+      <v-notice text="ボス右手検知" duration="11" />
+    </t>
+    <t sync="^14:7B97:" notice="ボス左手検知" >
+      <v-notice text="ボス左手検知" duration="11" />
+    </t>-->
+		<t sync="^14:7B94:" notice="ボス見て右安置" >
+			<v-notice text="ボス見て右安置" duration="11" />
+		</t>
+		<t sync="^14:7B95:" notice="ボスみて左安置" >
+			<v-notice text="ボス見て左安置" duration="11" />
 		</t>
 	</s>
 
 	<s name="P5S">
 		<a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
 		<a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" />
+		<a time="024" text="トランスフォームF" sync="オメガMの「トランスフォームF」" />
+		<a time="025" text="サークルプログラム" sync="オメガの「サークルプログラム」" notice="サークルプログラム。" />
+		<a time="028" text="波動砲" sync="オメガの「波動砲」" notice="波動砲" />
+		<!--a time="028" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" notice="次は、ハイパーパルス。" /-->
+		<a time="037" text="ノックバック" sync="オメガFの「ディスチャージャー」" notice="ノックバック" />
+		<a time="052" text="【構え】リアレーザー" sync="リアユニットは「リアレーザー」の構え。" notice="リアレーザー確認" />
+		<a time="055" text="リアレーザー開始" />
+		<a time="056" text="オメガ確認" sync="オメガFは「(ブリザガ・オメガ|)」の構え。" notice="オメガ確認" />
+		<a time="059" text="氷or刃" sync="オメガFの「(ブリザガ・オメガ|)」" />
+		<a time="063" text="リアレーザー終了" />
+		<a time="065" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" notice="ハイパーパルス。" />
+		<a time="073" sync="オメガFは「ソーラレイ」の構え。" />
+		<a time="079" text="ソーラレイ" notice="タンク攻撃" />
+		<a time="082" text="ソーラレイ" />
+		<t sync="オメガF:仮説……ヒトのリミットブレイク現象が" goto="P5O" />
 
+		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
+			<v-notice text="グリッチ:ミドル" duration="45" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
+			<v-notice text="グリッチ:ファー" duration="45" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="2" >
+			<v-notice text="ハロワ：ニア対象(南から左右)" duration="45" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="2" >
+			<v-notice text="ハロワ：ファー対象(北でボス下)" duration="45" />
+		</t>
+	</s>
+
+	<s name="P5O">
+		<a time="006" text="コード：＊＊＊ミ＊【オメガ】" sync="オメガFの「コード：＊＊＊ミ＊【オメガ】」" />
+		<a time="014" text="【構え】拡散波動砲" sync="オメガは「拡散波動砲」の構え。" />
+		<a time="023" text="AoE2回目" />
+		<a time="027" text="AoE1回目" />
+		<a time="030" text="【構え】検知" sync="オメガは「検知式波動砲」の構え。" notice="検知を確認" />
+		<a time="041" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
+		<a time="044" text="【構え】ブラスター" sync="オメガは「ブラスター」の構え。" notice="デュナミス3がブラスター" />
+		<a time="057" text="ブラスター" sync="オメガの「ブラスター」" notice="ブラスター" />
+		<a time="067" sync="オメガFは「ソーラレイ」の構え。" />
+		<a time="072" text="ソーラレイ" notice="タンク攻撃" />
+		<a time="076" text="ソーラレイ" />
+		<a time="084" text="最終開始" sync="オメガFは「ブラインド・フェイス」の構え。" />
+		<a time="094" text="時間切れ" sync="オメガFの「ブラインド・フェイス」" />
+		<a time="151" text="移行待ち" sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者……。 終わりを始まりとし、先へと進みます！" />
+		<t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
+
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロワ・ニアいちばん" >
+			<v-notice text="ニア:1番" duration="32" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロワ・ファーいちばん" >
+			<v-notice text="ファー:1番" duration="32" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロワ・ニアにばん" >
+			<v-notice text="ニア:2番" duration="32" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロワ・ファーにばん" >
+			<v-notice text="ファー:2番" duration="32" />
+		</t>
+	</s>
+
+	<s name="P6">
+		<a time="007" text="同期待ち" sync="アルファオメガは「コスモメモリー」の構え。" />
+		<a time="015" text="コスモメモリー" sync="アルファオメガの「コスモメモリー」" notice="コスモメモリー。" />
 	</s>
 
 	<!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
