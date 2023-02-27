@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶オメガ</name>
-	<rev>TEST15</rev>
+	<rev>TEST18</rev>
 	<description>
 		202302120049:TEST11 P5入りまで。検知に大幅トリガ追加
 		202302130113:TEST12 P5デルタを作成。動作未チェック
 		202302181826:TEST13EX P5シグマ試作
 		202302190136:TEST15 P5とりあえず全部。
+		202302220232:TEST16 フラグ付き大幅トリガ追加
+		202202231928:TEST17EX-Rev810 最終試作。試験的トリガを作成
+		202202240222:TEST18 試験的トリガの固定向け部分を配布用に調整。P1パンクラ調整
 		注意:作成途中の為、予期しない動作をすることがあります。
 		AquaCatのブログをよろしくお願いします。(https://www.aquacat.woEXrk/)
 	</description>
@@ -17,6 +20,7 @@
 	<start>0039::戦闘開始！</start>
 	<entry>P1</entry>
 
+	<!--配布前に固定用通知を外しておくこと-->
 	<default target-element="Activity" target-attr="notice-o" value="-3" />
 
 	<s name="P1">
@@ -32,10 +36,10 @@
 		<a time="057" text="ブラスター4" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
 		<a time="064" text="【詠唱】パンクラ" sync="オメガは「パントクラトル」の構え。" notice="パントクラトル開始" sync-o="20" />
 		<a time="069" text="パントクラトル" sync="オメガの「パントクラトル」" notice="デバフを確認" />
-		<a time="082" text="頭割り1" />
-		<a time="088" text="頭割り2" />
-		<a time="094" text="頭割り3" />
-		<a time="100" text="頭割り4" >
+		<a time="080" text="頭割り1" />
+		<a time="086" text="頭割り2" />
+		<a time="092" text="頭割り3" />
+		<a time="098" text="頭割り4" >
 			<!--インスタンスの1B基準を取得する-->
 			<expressions>
 				<set name="get_origin" value="true" />
@@ -98,14 +102,10 @@
 
 		<!--以下P2トリガ-->
 		<t no="6" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 77, X4):" notice="頭割り対象" >
-			<v-notice
-			  text="頭割り対象"
-			  duration="8" />
+			<v-notice text="頭割り対象" duration="8" />
 		</t>
 		<t no="7" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 323, X4):" notice="メテオ対象" >
-			<v-notice
-			  text="メテオ対象"
-			  duration="8" />
+			<v-notice text="メテオ対象" duration="8" />
 		</t>
 		<!--グリッチの通知-->
 		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
@@ -130,28 +130,28 @@
 		</t>
 
 		<!--スペスペで101を検知できないないので下記は動作しないので注意。-->
-		<t sync="101:[id8]:00020001:01" notice="北" >
+		<t sync="^101:[id8]:00020001:01" notice="北" >
 			<v-notice text="北に目" duration="5" />
 		</t>
-		<t sync="101:[id8]:00020001:02" notice="北東" >
+		<t sync="^101:[id8]:00020001:02" notice="北東" >
 			<v-notice text="北東に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:03" notice="東" >
+		<t sync="^101:[id8]:00020001:03" notice="東" >
 			<v-notice text="東に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:04" notice="南東" >
+		<t sync="^101:[id8]:00020001:04" notice="南東" >
 			<v-notice text="南東に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:05" notice="南" >
+		<t sync="^101:[id8]:00020001:05" notice="南" >
 			<v-notice text="南に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:06" notice="南西" >
+		<t sync="^101:[id8]:00020001:06" notice="南西" >
 			<v-notice text="南西に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:07" notice="西" >
+		<t sync="^101:[id8]:00020001:07" notice="西" >
 			<v-notice text="西に目" duration="10" />
 		</t>
-		<t sync="101:[id8]:00020001:08" notice="北西" >
+		<t sync="^101:[id8]:00020001:08" notice="北西" >
 			<v-notice text="北西に目" duration="10" />
 		</t>
 
@@ -432,7 +432,7 @@
 	<s name="P4">
 		<a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
 		<a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
-		<a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notie="頭割り" sync-s="-3" sync-e="3" />
+		<a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
 		<a time="023" text="外に出る" notice="そとにでる" notice-o="0" />
 		<a time="025" text="内に入る" notice="うちはいる" notice-o="0" />
 		<a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
@@ -475,6 +475,7 @@
 		<a time="101" text="ソーラレイ" />
 		<t sync="オメガM:この力の増幅は、リミッターカットでは説明不能" goto="P5S" />
 
+		<!--以下P5デルタ用トリガ-->
 		<t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" notice="ニア対象" >
 			<v-notice text="ニア対象。検知誘導" duration="20" />
 		</t>
@@ -507,7 +508,12 @@
 
 	<s name="P5S">
 		<a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
-		<a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" />
+		<a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" >
+			<!--デュナミスとハロワのカウントを初期化-->
+			<set name="dynamis_count" value="00" />
+			<set name="P5S-HWN" value="false" />
+			<set name="P5S-HWF" value="false" />
+		</a>
 		<a time="024" text="トランスフォームF" sync="オメガMの「トランスフォームF」" />
 		<a time="025" text="サークルプログラム" sync="オメガの「サークルプログラム」" notice="サークルプログラム。" />
 		<a time="028" text="波動砲" sync="オメガの「波動砲」" notice="波動砲" />
@@ -530,19 +536,65 @@
 		<t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
 			<v-notice text="グリッチ:ファー" duration="45" />
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="2" >
-			<v-notice text="ハロワ：ニア対象(南から左右)" duration="45" />
+
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="3" >
+			<v-notice text="ハロワ：ニア対象" duration="10" />
+			<expressions>
+				<set name="P5S-HWN" value="true" />
+			</expressions>
 		</t>
-		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="2" >
-			<v-notice text="ハロワ：ファー対象(北でボス下)" duration="45" />
+		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="3" >
+			<v-notice text="ハロワ：ファー対象" duration="10" />
+			<expressions>
+				<set name="P5S-HWF" value="true" />
+			</expressions>
 		</t>
+
+		<!--固定向け通知の為、オミット
+    <!-ハロワニア->
+    <t sync="オメガFの「ディスチャージャー」" notice="ニア担当。南から追従" >
+      <v-notice text="ニア:南から中央左右へ" duration="27" />
+      <expressions>
+        <pre name="P5S-HWN" value="true" />
+      </expressions>
+    </t>
+    <!-ハロワファー->
+    <t sync="オメガFの「ディスチャージャー」" notice="ファー担当。北のオメガ足元へ" >
+      <v-notice text="ファー:北オメガ足元" duration="27" />
+      <expressions>
+        <pre name="P5S-HWF" value="true" />
+      </expressions>
+    </t>
+    <!-ハロワ無し、デュナミス1->
+    <t sync="オメガFの「ディスチャージャー」" notice="誘導担当" >
+      <v-notice text="誘導担当" duration="27" />
+      <expressions>
+        <pre name="dynamis_count" value="01" />
+        <pre name="P5S-HWF" value="false" />
+        <pre name="P5S-HWF" value="false" />
+      </expressions>
+    </t>
+    <!-デュナミス無し->
+    <t sync="オメガFの「ディスチャージャー」" notice="無職担当、南へ" >
+      <v-notice text="無職担当。南へ" duration="27" />
+      <expressions>
+        <pre name="dynamis_count" value="00" />
+      </expressions>
+    </t>
+  -->
+
 	</s>
 
 	<s name="P5O">
-		<a time="006" text="コード：＊＊＊ミ＊【オメガ】" sync="オメガFの「コード：＊＊＊ミ＊【オメガ】」" />
+		<a time="006" text="コード：＊＊＊ミ＊【オメガ】" sync="オメガFの「コード：＊＊＊ミ＊【オメガ】」" >
+			<!--セカンド、ファーストの初期化-->
+			<set name="P5O-HW-1" value="false" />
+			<set name="P5O-HW-2" value="false" />
+		</a>
+
 		<a time="014" text="【構え】拡散波動砲" sync="オメガは「拡散波動砲」の構え。" />
-		<a time="023" text="AoE2回目" />
-		<a time="027" text="AoE1回目" />
+		<a time="023" text="AoE1回目" />
+		<a time="027" text="AoE2回目" />
 		<a time="030" text="【構え】検知" sync="オメガは「検知式波動砲」の構え。" notice="検知を確認" />
 		<a time="041" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
 		<a time="044" text="【構え】ブラスター" sync="オメガは「ブラスター」の構え。" notice="デュナミス3がブラスター" />
@@ -552,26 +604,172 @@
 		<a time="076" text="ソーラレイ" />
 		<a time="084" text="最終開始" sync="オメガFは「ブラインド・フェイス」の構え。" />
 		<a time="094" text="時間切れ" sync="オメガFの「ブラインド・フェイス」" />
-		<a time="151" text="移行待ち" sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者……。 終わりを始まりとし、先へと進みます！" />
+		<a time="151" text="移行待ち" />
 		<t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
 
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロワ・ニアいちばん" >
 			<v-notice text="ニア:1番" duration="32" />
+			<expressions>
+				<set name="P5O-HW-1" value="true" />
+			</expressions>
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロワ・ファーいちばん" >
 			<v-notice text="ファー:1番" duration="32" />
+			<expressions>
+				<set name="P5O-HW-1" value="true" />
+			</expressions>
 		</t>
+
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロワ・ニアにばん" >
-			<v-notice text="ニア:2番" duration="32" />
+			<v-notice text="ニア:2番" duration="50" />
+			<expressions>
+				<set name="P5O-HW-2" value="true" />
+			</expressions>
 		</t>
 		<t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロワ・ファーにばん" >
-			<v-notice text="ファー:2番" duration="32" />
+			<v-notice text="ファー:2番" duration="50" />
+			<expressions>
+				<set name="P5O-HW-2" value="true" />
+			</expressions>
+		</t>
+
+		<!--同梱トリガの動作チェック中
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：(ニア|ファー) from  for 32.00 Seconds" >
+      <expressions>
+        <set name="P5O-HW-1" value="true" />
+      </expressions>
+    </t>
+
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：(ニア|ファー) from  for 50.00 Seconds" >
+      <expressions>
+        <set name="P5O-HW-2" value="true" />
+      </expressions>
+    </t>
+  -->
+
+		<!--デュナミス1の時は誘導を意識させる-->
+		<t sync="オメガは「拡散波動砲」の構え。" notice="2回誘導" notice-o="2" >
+			<v-notice text="2回誘導" duration="27" />
+			<expressions>
+				<pre name="dynamis_count" value="01" />
+				<pre name="P5O-HW-1" value="false" />
+				<pre name="P5O-HW-2" value="false" />
+			</expressions>
+		</t>
+		<!--1回目ハロワ対象の時の通知-->
+		<t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ対象" notice-o="2" >
+			<v-notice text="ハロワ対象" duration="27" />
+			<expressions>
+				<pre name="P5O-HW-1" value="true" />
+			</expressions>
+		</t>
+		<!--1回目デュナミス2の時は検知を意識させる-->
+		<t sync="オメガは「拡散波動砲」の構え。" notice="検知対象を確認" notice-o="2" >
+			<v-notice text="検知対象を確認" duration="27" />
+			<expressions>
+				<pre name="dynamis_count" value="02" />
+				<pre name="P5O-HW-1" value="false" />
+				<pre name="P5O-HW-2" value="false" />
+			</expressions>
+		</t>
+		<!--1回目デュナミス2+セカンドの時は検知を確定させる。14IDを調査すること-->
+		<t sync="オメガは「拡散波動砲」の構え。" notice="検知受ける" notice-o="2" >
+			<v-notice text="検知確定" duration="27" />
+			<expressions>
+				<pre name="dynamis_count" value="02" />
+				<pre name="P5O-HW-2" value="true" />
+			</expressions>
+		</t>
+		<!--2回目でハロワがついていた場合-->
+		<t sync="オメガは「ブラスター」の構え。" notice="ハロワ確認" >
+			<v-notice text="ハロワ対象" duration="27" />
+			<expressions>
+				<pre name="P5O-HW-2" value="true" />
+			</expressions>
+		</t>
+		<!--2回目でデュナミス2がついていた場合-->
+		<t sync="オメガは「ブラスター」の構え。" notice="ハロワ誘導担当" >
+			<v-notice text="ハロワ誘導担当" duration="27" />
+			<expressions>
+				<pre name="dynamis_count" value="02" />
+				<pre name="P5O-HW-2" value="false" />
+			</expressions>
+		</t>
+		<!--2回目でデュナミス3がついていた場合-->
+		<t sync="オメガは「ブラスター」の構え。" notice="ブラスター担当" >
+			<v-notice text="ブラスター担当" duration="27" />
+			<expressions>
+				<pre name="dynamis_count" value="03" />
+			</expressions>
 		</t>
 	</s>
 
 	<s name="P6">
 		<a time="007" text="同期待ち" sync="アルファオメガは「コスモメモリー」の構え。" />
 		<a time="015" text="コスモメモリー" sync="アルファオメガの「コスモメモリー」" notice="コスモメモリー。" />
+		<!--a time="021" sync="アルファオメガ:千万の星よ、天を貫く矢となり注げ" /-->
+		<a time="021" sync="アルファオメガは「コスモアロー」の構え。" />
+		<!--１回目-->
+		<a time="028" text="コスモアロー" sync="アルファオメガの「コスモアロー」" notice="コスモアロー" />
+		<!--a time="036.0" sync="アルファオメガ:星渡る龍のごとく、敵を討つ…… コスモダイブ！" /-->
+		<a time="037" text="【構え】コスモダイブ" sync="アルファオメガは「コスモダイブ」の構え。" />
+		<a time="045" text="コスモダイブ" sync="アルファオメガの「コスモダイブ」" notice="コスモダイブ" />
+		<!--a time="055" sync="アルファオメガ:これが「竜の星」を焼いた終焉の炎…… 波動砲、斉射！" /-->
+		<a time="055" text="AoE確認" sync="アルファオメガは「波動砲：リミッターカット」の構え。" notice="えーおーいー確認" />
+		<a time="062" text="波動砲：リミッターカット" sync="アルファオメガの「波動砲：リミッターカット」" />
+		<a time="066.5" text="波動砲6" />
+		<a time="068.5" text="波動砲5" />
+		<a time="070.5" text="波動砲4" />
+		<a time="072.5" text="波動砲3" />
+		<a time="074.5" text="波動砲2" />
+		<a time="076.5" text="波動砲1" />
+		<a time="079" text="【開始】波動砲" sync="アルファオメガは「波動砲」の構え。" notice="散会" />
+		<a time="082.5" text="波動砲1" />
+		<a time="084.5" text="波動砲2" notice="次は頭割り" notice-o="0" />
+		<a time="091" text="【頭割り】波動砲" sync="アルファオメガの「波動砲」" />
+
+		<!--2回目-->
+		<a time="098" sync="アルファオメガは「コスモアロー」の構え。" />
+		<a time="104" text="コスモアロー" sync="アルファオメガの「コスモアロー」" notice="コスモアロー" />
+		<a time="112" text="【開始】波動砲" sync="アルファオメガは「波動砲」の構え。"  />
+		<a time="116.3" text="【単】波動砲1" />
+		<a time="118.3" text="【単】波動砲2" notice="次は頭割り" notice-o="0" />
+		<a time="124" text="【頭割り】波動砲" sync="アルファオメガの「波動砲」" />
+		<a time="132" text="AoE確認" sync="アルファオメガは「波動砲：リミッターカット」の構え。" notice="えーおーいー確認" />
+		<a time="139" text="波動砲：リミッターカット" sync="アルファオメガの「波動砲：リミッターカット」" />
+		<a time="146" text="波動砲6" />
+		<a time="148" text="波動砲5" />
+		<a time="150" text="波動砲4" />
+		<a time="150" text="【構え】コスモダイブ" sync="アルファオメガは「コスモダイブ」の構え。"  />
+		<a time="152" text="波動砲3" />
+		<a time="154" text="波動砲2" />
+		<a time="156" text="波動砲1" />
+		<a time="159" text="コスモダイブ" sync="アルファオメガの「コスモダイブ」" notice="コスモダイブ" />
+
+		<a time="165" sync="終わりの時がきました。 見せましょう、進化したワタシの戦いを" />
+		<!--a time="172.0" sync="アルファオメガ:破滅を呼ぶ星よ、天より降れ…… コスモメテオ！" /-->
+
+		<a time="172" text="足元集合" sync="アルファオメガは「コスモメテオ」の構え。" notice="足元集合" />
+		<a time="180" text="コスモメテオ" sync="アルファオメガの「コスモメテオ」" notice="コスモメテオ。" />
+		<a time="194" text="距離減付与" />
+
+		<!--雰囲気壊れかねないのでTTSはオミット-->
+		<!--a time="208.0" sync="アルファオメガ:ワタシは、この星で遭遇したヒトという種を、 弱き存在だと認識しました。" /-->
+		<a time="208" text="【構え】マジックナンバー" sync="アルファオメガは「マジックナンバー」の構え。" />
+		<a time="215" text="マジックナンバー" sync="アルファオメガの「マジックナンバー」" />
+		<!--a time="224.0" sync="アルファオメガ:ところが、アナタたちは不可解な強さを示し、弱き勝者となった。 その謎はワタシを大いに混乱させました。" /-->
+		<a time="224" text="【構え】マジックナンバー" sync="アルファオメガは「マジックナンバー」の構え。" />
+		<a time="231" text="マジックナンバー" sync="アルファオメガの「マジックナンバー」" />
+		<!--以下TTSあり版
+    <a time="208.0" text="【構え】マジックナンバー" sync="アルファオメガは「マジックナンバー」の構え。" notice="タンクえるびー" notice-o="0" />
+    <a time="215.0" text="マジックナンバー" sync="アルファオメガの「マジックナンバー」" notice="ヒラえるびー" notice-o="0" />
+    <a time="224.0" text="【構え】マジックナンバー" sync="アルファオメガは「マジックナンバー」の構え。" notice="タンクえるびー" notice-o="0" />
+    <a time="231.0" text="マジックナンバー" sync="アルファオメガの「マジックナンバー」" notice="ヒラえるびー" notice-o="0" />
+  -->
+		<!--a time="238" sync="アルファオメガ:今、ようやくワタシも、アルファの助けを借りて、 未知なる力を完全に発揮している……。" /-->
+		<a time="238" text="コード：＊＊＊ミ＊" sync="アルファオメガは「コード：＊＊＊ミ＊」の構え。" />
+		<a time="248" sync="アルファオメガ:さあ、検証を完遂させましょう。 ワタシたちの勝利によって" />
+		<a time="255" text="時間切れ" />
 	</s>
 
 	<!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
@@ -586,5 +784,12 @@
 	</t>
 	<t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
 		<v-notice text="×マーカー" duration="30" />
+	</t>
+	<!--デュナミスのカウンタ-->
+	<t sync="^1A:[id8]:[mex] gains the effect of デュナミスの高揚 .*(?&lt;dynamis_num&gt;(01|02|03))" >
+		<v-notice text="デュナミス-${dynamis_num}" duration="10" />
+		<expressions>
+			<set name="dynamis_count" value="${dynamis_num}" />
+		</expressions>
 	</t>
 </timeline>
