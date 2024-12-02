@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶エデン</name>
-	<rev>draft.3</rev>
+	<rev>draft.4</rev>
 	<description>
 		202411280208:ドラフト1
 		202411290045:ドラフト2
+		202412011956:ドラフト4
 		AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
 	</description>
 	<author>Aqua Cat</author>
@@ -109,7 +110,7 @@
 		<t sync="^14:9D0A:" notice="外処理" >
 			<v-notice text="外処理" duration="5" />
 		</t>
-		<t sync="^14:9CC1:" notice="内処理" >
+		<t sync="^14:9D0B:" notice="内処理" >
 			<v-notice text="内処理" duration="5" />
 		</t>
 		<a time="049.0" text="ノックバック" sync="シヴァ・ミトロンの「ヘヴンリーストライク」" notice="ノックバック" />
@@ -140,5 +141,50 @@
 		</t>
 		<a time="124.0" text="整列" sync="シヴァ・ミトロンは「光の暴走」の構え。" notice="整列注意" />
 		<a time="130.0" text="光の暴走" sync="シヴァ・ミトロンの「光の暴走」" notice="光の暴走" />
+		<a time="148.0" text="爆発1" sync="聖なる光の「爆発」" sync-interval="5" notice="爆発待機" />
+		<a time="151.0" text="爆発2" />
+		<a time="155.0" text="2:中央" sync="シヴァ・ミトロンの「浸食光」" notice="2は中央" />
+		<a time="158.0" text="バニシュガ" sync="シヴァ・ミトロンの「バニシュガ」" />
+		<a time="166.0" text="光の津波" sync="シヴァ・ミトロンの「光の津波」" notice="散開" />
+		<a time="175.0" text="最終詠唱開始" sync="シヴァ・ミトロンは「絶対零度」の構え。" />
+		<a time="186.0" text="絶対零度" sync="シヴァ・ミトロンの「絶対零度」" />
+		<a time="196.0" text="同期待ち" sync="ガイア:このままじゃ、" sync-s="-10" sync-e="10" />
+		<t sync="ガイア:力が溢れる…！" notice="中央攻撃" >
+			<v-notice text="攻撃可能" duration="5" />
+		</t>
+		<a time="255.0" text="光の氾濫" sync="永久氷晶の「光の氾濫」" />
+		<t sync="シヴァ・ミトロン:フッ、助かったぞ、ガイア" goto="P3" />
 	</s>
+
+	<s name="P3">
+		<a time="004.0" text="ジャンクション" sync="シヴァ・ミトロンの「ジャンクション」" />
+		<a time="018.0" text="HP1" sync="闇の巫女は「ヘル・ジャッジメント」の構え。" notice="HP注意" />
+		<a time="023.0" text="ジャッジメント" sync="闇の巫女の「ヘル・ジャッジメント」" />
+		<a time="037.0" text="時間圧縮・絶" sync="闇の巫女の「時間圧縮・絶」" />
+		<a time="041.0" text="スピード" sync="闇の巫女は「スピード」を唱えた。" notice="基準を確認！" />
+
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="早ファイガ" >
+			<v-notice text="早ファイガ" duration="5" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="中ファイガ" >
+			<v-notice text="中ファイガ" duration="5" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="遅ファイガ" >
+			<v-notice text="遅ファイガ" duration="5" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ブリザガ" >
+			<v-notice text="ブリザガ" duration="5" />
+		</t>
+
+		<a time="049.0" text="早ファイガ" sync="闇の巫女の「ダークファイガ」" notice="いち" notice-o="0" />
+		<a time="055.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="にい" notice-o="0" />
+		<a time="059.0" text="中ファイガ" sync="闇の巫女の「ダークファイガ」" notice="さん" notice-o="0" />
+		<a time="065.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="よん" notice-o="0" />
+		<a time="070.0" text="遅ファイガ" sync="闇の巫女の「ダークファイガ」" notice="ごお" notice-o="0" />
+		<a time="075.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="ろく" notice-o="0" />
+		<a time="078.0" text="外周向く" notice="外周に向く" />
+		<a time="081.0" text="シャドウアイ" sync="闇の巫女の「シャドウアイ」" />
+	</s>
+
+
 </timeline>
