@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
 	<name>絶エデン</name>
-	<rev>draft.4</rev>
+	<rev>draft.8</rev>
 	<description>
 		202411280208:ドラフト1
 		202411290045:ドラフト2
 		202412011956:ドラフト4
+		202412070052:ドラフト8 雑魚でACTがリセットしない対策。
 		AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
 	</description>
 	<author>Aqua Cat</author>
@@ -20,7 +21,7 @@
 	<default target-element="Activity" target-attr="sync-e" value="3" />
 
 	<s name="P1">
-		<a time="001.0" sync="フェイトブレイカー:今こそ誓いを果たす時……" >
+		<a time="001.0" sync="フェイトブレイカー:今こそ誓いを果たす時" >
 			<expressions>
 				<!--カウンタを初期化 -->
 				<set name="count" value="0" />
@@ -50,7 +51,7 @@
 		<a time="151.0" sync="フェイトブレイカー:今度こそ間違わない……。" />
 		<a time="151.0" text="最終詠唱" sync="フェイトブレイカーは「光焔光背」の構え。" />
 		<a time="161.0" text="時間切れ" />
-		<t sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか……。" goto="P2" />
+		<t sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか" goto="P2" />
 		<!--８方向散開からの分岐-->
 		<t sync="^14:(9CD0|9D89):" notice="ペア" >
 			<v-notice text="炎:ペア" duration="7" notice-o="3" />
@@ -77,14 +78,14 @@
 
 		<!--連続で線が付くところの通知-->
 		<t no="1" name="炎線" sync="^14:9CC9:" >
-			<v-notice text="VAR['count']回目:炎" duration="23" />
+			<v-notice text="VAR['count']回目:炎" duration="18" />
 			<expressions>
 				<!--カウントを+1する-->
 				<set name="count" value="EVAL(VAR['count']+1,N0)" />
 			</expressions>
 		</t>
 		<t no="2" name="雷線" sync="^14:9CCC:" >
-			<v-notice text="VAR['count']回目:雷" duration="23" />
+			<v-notice text="VAR['count']回目:雷" duration="18" />
 			<expressions>
 				<!--カウントを+1する-->
 				<set name="count" value="EVAL(VAR['count']+1,N0)" />
@@ -101,44 +102,24 @@
 	</s>
 
 	<s name="P2">
-		<a time="000.0" sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか……。" />
-		<a time="012.0" text="クアドラスラップ" sync="シヴァ・ミトロンの「クアドラスラップ」" />
-		<a time="016.0" text="クアドラスラップ" sync="シヴァ・ミトロンの「クアドラスラップ」" />
+		<a time="000.0" sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか" />
+		<a time="012.0" text="スラップ1" sync="シヴァ・ミトロンの「クアドラスラップ」" sync-interval="10" />
+		<a time="016.0" text="スラップ2" />
 		<a time="026.0" text="鏡写し" sync="シヴァ・ミトロンの「鏡写し」" />
-		<a time="033.0" text="ダイアモンドダスト" sync="シヴァ・ミトロンの「ダイアモンドダスト」" />
+		<a time="033.0" text="ダイアモンドダスト" sync="シヴァ・ミトロンの「ダイアモンドダスト」" notice="全体攻撃" />
 		<a time="042.0" text="キック" sync="巫女の鏡像の「(アクス|サイス)キック」" />
-		<t sync="^14:9D0A:" notice="外処理" >
-			<v-notice text="外処理" duration="5" />
-		</t>
-		<t sync="^14:9D0B:" notice="内処理" >
-			<v-notice text="内処理" duration="5" />
-		</t>
 		<a time="049.0" text="ノックバック" sync="シヴァ・ミトロンの「ヘヴンリーストライク」" notice="ノックバック" />
 		<a time="052.0" text="AoE捨て" sync="巫女の鏡像の「シンホーリー」" notice="頭割り。AoE捨て" />
 		<a time="055.0" text="視線注意" sync="シヴァ・ミトロン:光によりて、静寂を！" notice="視線注意" />
 		<a time="060.0" text="アーマー" sync="シヴァ・ミトロンの「ブライトアーマー」" />
-		<a time="063.0" sync="巫女の鏡像:静寂に凍てつけ！" />
-		<a time="067.0" text="双剣技" sync="巫女の鏡像の「静寂の双剣技」" sync-interval="5" />
-		<a time="070.0" text="双剣技" />
-		<t sync="^14:9D01:" notice="後ろから" >
-			<v-notice text="後→前" duration="5" />
-		</t>
-		<t sync="^14:9D02:" notice="前から" >
-			<v-notice text="前→後" duration="5" />
-		</t>
-
+		<a time="067.0" text="双剣技1" sync="巫女の鏡像の「(静寂|閑寂)の双剣技」" sync-interval="5" />
+		<a time="070.0" text="双剣技2" />
 		<a time="081.0" text="頭割り" sync="シヴァ・ミトロンの「ホーリーレイ」" notice="頭割り" />
 		<a time="086.0" text="誘導注意" sync="シヴァ・ミトロンは「鏡の国」の構え。" notice="誘導に注意" />
 		<a time="090.0" text="鏡の国" sync="シヴァ・ミトロンの「鏡の国」" />
 		<a time="104.0" text="サイスキック" sync="シヴァ・ミトロンの「サイスキック」" notice="1回目"/>
 		<a time="114.0" text="ミラーキック" sync="氷面鏡の「ミラーリング・サイスキック」" notice="2回目" />
 		<a time="120.0" text="バニシュガ" sync="シヴァ・ミトロンの「バニシュガ」" />
-		<t sync="^14:9D1C:" notice="ペア" >
-			<v-notice text="ペア" duration="5" />
-		</t>
-		<t sync="^14:9D1D:" notice="散開" >
-			<v-notice text="散開" duration="5" />
-		</t>
 		<a time="124.0" text="整列" sync="シヴァ・ミトロンは「光の暴走」の構え。" notice="整列注意" />
 		<a time="130.0" text="光の暴走" sync="シヴァ・ミトロンの「光の暴走」" notice="光の暴走" />
 		<a time="148.0" text="爆発1" sync="聖なる光の「爆発」" sync-interval="5" notice="爆発待機" />
@@ -154,6 +135,29 @@
 		</t>
 		<a time="255.0" text="光の氾濫" sync="永久氷晶の「光の氾濫」" />
 		<t sync="シヴァ・ミトロン:フッ、助かったぞ、ガイア" goto="P3" />
+		<!--履行でワイプした場合、リセットがされない対策-->
+		<t sync="フェイトブレイカー:今こそ誓いを果たす時" goto="P1" />
+		<!--キックの内外判定-->
+		<t sync="^14:9D0A:" notice="外処理" >
+			<v-notice text="外処理" duration="5" />
+		</t>
+		<t sync="^14:9D0B:" notice="内処理" >
+			<v-notice text="内処理" duration="5" />
+		</t>
+		<!--双剣技の前後判定-->
+		<t sync="^14:9D01:" notice="後ろから" >
+			<v-notice text="後→前" duration="5" />
+		</t>
+		<t sync="^14:9D02:" notice="前から" >
+			<v-notice text="前→後" duration="5" />
+		</t>
+		<!--バニシュガの集散判定-->
+		<t sync="^14:9D1C:" notice="ペア" >
+			<v-notice text="ペア" duration="5" />
+		</t>
+		<t sync="^14:9D1D:" notice="散開" >
+			<v-notice text="散開" duration="5" />
+		</t>
 	</s>
 
 	<s name="P3">
@@ -177,14 +181,44 @@
 		</t>
 
 		<a time="049.0" text="早ファイガ" sync="闇の巫女の「ダークファイガ」" notice="いち" notice-o="0" />
-		<a time="055.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="にい" notice-o="0" />
+		<a time="055.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="にい" notice-o="0" />
 		<a time="059.0" text="中ファイガ" sync="闇の巫女の「ダークファイガ」" notice="さん" notice-o="0" />
-		<a time="065.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="よん" notice-o="0" />
+		<a time="065.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="よん" notice-o="0" />
 		<a time="070.0" text="遅ファイガ" sync="闇の巫女の「ダークファイガ」" notice="ごお" notice-o="0" />
-		<a time="075.0" text="シンメルトン" sync="楽しみの砂時計の「シンメルトン」" notice="ろく" notice-o="0" />
+		<a time="075.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="ろく" notice-o="0" />
 		<a time="078.0" text="外周向く" notice="外周に向く" />
 		<a time="081.0" text="シャドウアイ" sync="闇の巫女の「シャドウアイ」" />
+		<a time="086.0" text="中央集合" sync="闇の巫女の「シェルクラッシャー」" notice="中央集合" />
+		<a time="094.0" text="全体攻撃" sync="闇の巫女の「ショックウェーブ・パルサー」" notice="全体攻撃" />
+		<a time="102.0" text="強攻撃" sync="闇の巫女の「ブラックヘイロー」" notice="強攻撃" />
+		<a time="111.0" text="ディレイスペル" sync="闇の巫女の「ディレイスペル・リフレイン」" />
+		<a time="119.0" text="ダークウォタガ" sync="闇の巫女の「ダークウォタガ」" />
+		<a time="122.0" text="アポカリプス" sync="闇の巫女は「アポカリプス」を唱えた。" notice="安置を確認" />
+		<a time="130.0" text="着弾1" notice="ウォタガ、いち" />
+		<a time="132.0" text="テイカー散開" sync="闇の巫女の「スピリットテイカー」" notice="散開" />
+		<a time="142.0" text="エラプション" sync="闇の巫女の「ダークエラプション」" notice="エラプション" />
+		<a time="149.0" text="着弾2" notice="ウォタガ、にい。タンク誘導" />
+		<a time="151.0" text="暗夜の舞踏技" sync="闇の巫女の「暗夜の舞踏技」" sync-interval="5" />
+		<a time="154.0" text="ノックバック" notice="ノックバック" />
+		<a time="158.0" text="着弾3" notice="ウォタガ、さん" />
+		<a time="163.0" text="全体攻撃" sync="闇の巫女の「ショックウェーブ・パルサー」" notice="全体攻撃" />
+		<a time="166.0" text="最終詠唱開始" sync="闇の巫女は「エンド・オブ・メモリーズ」を唱えた。" />
+		<a time="177.0" text="エンド・オブ・メモリーズ" sync="闇の巫女の「エンド・オブ・メモリーズ」" />
+		<a time="180.0" text="仮作成Pへ" goto="P4" />
 	</s>
 
+	<s name="P4">
+		<a time="30" text="P4ロード成功" />
+
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ" notice="ブリザガ、赤なら東西" >
+			<v-notice text="ブリザガ:赤なら東西" duration="30" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエアロガ" notice="エアロガ、南" >
+			<v-notice text="エアロガ:南" duration="30" />
+		</t>
+		<t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエラプション" notice="エラプ、北" >
+			<v-notice text="エラプ:北" duration="30" />
+		</t>
+	</s>
 
 </timeline>
